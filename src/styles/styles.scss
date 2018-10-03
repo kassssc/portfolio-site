@@ -1,0 +1,252 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url(/assets/fonts/gotham.otf) format('otf');
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/assets/fonts/montserrat.ttf) format('ttf');
+}
+
+$bg: #202020;
+$default: #E0DDDA;
+
+html {
+  background-color: $bg !important;
+}
+
+body {
+  background: $bg;
+  height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $default;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+::selection {
+  background: rgba(224,221,218,.99); /* WebKit/Blink Browsers */
+  color: $bg;
+}
+::-moz-selection {
+  background: rgba(224,221,218,.99); /* Gecko Browsers */
+  color: $bg;
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $default;
+}
+#nav {
+  padding: 30px;
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+
+.sticky-offset {
+  padding-top: 52px;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome and Opera */
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+.justify-center {
+  justify-content: center !important;
+}
+.justify-evenly {
+  justify-content: space-evenly !important;
+}
+.justify-around {
+  justify-content: space-around !important;
+}
+.justify-end {
+  justify-content: flex-end !important;
+}
+.align-center {
+  align-items: center !important;
+}
+
+.button.custom {
+  border-radius: 1px;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-style: none;
+  &.active {
+
+  }
+  &.md {
+    height: 35px;
+    width: 150px;
+  }
+  &.primary {
+    color: $bg;
+    background: rgba(224,221,218,0.8);
+  }
+}
+
+.contact-bar {
+  i {
+    color: $default;
+    font-size: 2.5rem;
+    margin: 0 5px;
+  }
+}
+
+.contact-field {
+  ::selection {
+    color: rgba(224,221,218,.99); /* WebKit/Blink Browsers */
+    background: $bg;
+  }
+  color: $default;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 10px 5px;
+  .contact-label {
+    text-align: center;
+    line-height: 35px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    border-radius: 3px;
+    background: $default;
+    color: $bg;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    transition: 150ms linear;
+    height: 35px;
+  }
+  &:hover {
+    .contact-label {
+      &.mail { width: 180px; }
+      &.linkedin { width: 100px; }
+      &.phone { width: 140px; }
+    }
+  }
+}
+
+#about {
+  margin: 75px 0 0 0;
+}
+
+.about-content {
+  h4 { margin-left: 30px !important; }
+}
+
+.card {
+  height: 275px;
+  border-radius: 1px;
+  padding: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  .detail-btn {
+    color: $default;
+    background: rgba(25,25,25,0.6);
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: 100ms ease-in-out;
+  }
+  .bg {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    background: rgba(0,0,0,0.5);
+    transition: 100ms ease-in-out;
+  }
+  .img {
+    overflow: auto;
+    z-index: 0;
+    position: absolute;
+    top: -3%; bottom: -3%; right: -3%; left: -3%;
+    transition: 100ms ease-in-out;
+    -webkit-filter: grayscale(75%);
+    -moz-filter: grayscale(75%);
+    -o-filter: grayscale(75%);
+    -ms-filter: grayscale(75%);
+    filter: grayscale(75%);
+    &.home24 {
+      background: url('./assets/images/home24.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &.wr {
+      background: url('./assets/images/steeringwheel.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &.fa {
+      background: url('./assets/images/fa.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &.usda {
+      background: url('./assets/images/usda.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  &:hover {
+    .detail-btn{
+      visibility: visible;
+      opacity: 1;
+    }
+    .bg {
+      background: rgba(100,100,100,.4);
+    }
+    .img {
+      -webkit-filter: blur(6px);
+      -moz-filter: blur(6px);
+      -o-filter: blur(6px);
+      -ms-filter: blur(6px);
+      filter: blur(6px);
+    }
+    .card-title {
+      color: $default;
+      transform: none;
+    }
+  }
+  .card-title {
+    transform: translateY(30px);
+    transition: 100ms ease-in-out;
+    z-index: 10;
+    font-size: 2rem;
+    font-weight: 900;
+    color: $default;
+    text-align: center;
+  }
+}
+
