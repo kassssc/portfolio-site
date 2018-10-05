@@ -2,10 +2,12 @@
   <div id="app">
     <section class="section">
       <div class="container">
-        <title-bar></title-bar>
-        <!-- <hr class="is-marginless"> -->
-        <nav-bar></nav-bar>
-        <project-list></project-list>
+        <div id="projects">
+          <title-bar></title-bar>
+          <!-- <hr class="is-marginless"> -->
+          <nav-bar></nav-bar>
+          <project-list></project-list>
+        </div>
         <about-section></about-section>
         <resume-section></resume-section>
         <!-- <router-view/> -->

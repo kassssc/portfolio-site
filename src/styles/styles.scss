@@ -55,7 +55,7 @@ h1 {
 }
 
 .sticky-offset {
-  padding-top: 52px;
+  padding-top: 75px;
 }
 
 .container {
@@ -119,6 +119,11 @@ h1 {
   }
 }
 
+.invert-selection::selection {
+    color: rgba(224,221,218,0.99); /* WebKit/Blink Browsers */
+    background: $bg;
+}
+
 .contact-field {
   ::selection {
     color: rgba(224,221,218,.99); /* WebKit/Blink Browsers */
@@ -152,12 +157,8 @@ h1 {
   }
 }
 
-#about {
-  margin: 75px 0 0 0;
-}
-
 .about-content {
-  h4 { margin-left: 30px !important; }
+  h5 { margin-left: 30px !important; }
 }
 
 .card {
@@ -248,5 +249,66 @@ h1 {
     color: $default;
     text-align: center;
   }
+}
+
+.name {
+  background: $default;
+  padding: 0.25rem;
+  border-radius: 3px;
+  h2 { color: $bg; }
+}
+
+.last-name {
+  padding: 0.25rem;
+}
+
+$sizeUnit: rem;
+$marginKey: 'm';
+$paddingKey: 'p';
+$separator: '-';
+$sizes: (
+    ('none', 0),
+    ('xxs', 0.125),
+    ('xs', 0.25),
+    ('sm', 0.5),
+    ('md', 1),
+    ('lg', 2),
+    ('xl', 4),
+    ('xxl', 8),
+);
+$positions: (
+    ('t', 'top'),
+    ('r', 'right'),
+    ('b', 'bottom'),
+    ('l', 'left')
+);
+
+.inline {
+  display: inline !important;
+}
+
+@function sizeValue($key, $value) {
+    @return if($key == 'none', 0, $value + $sizeUnit);
+}
+
+@each $size in $sizes {
+    $sizeKey: nth($size, 1);
+    $sizeValue: nth($size, 2);
+    .#{$marginKey}#{$separator}#{$sizeKey} {
+        margin: sizeValue($sizeKey, $sizeValue) !important;
+    }
+    .#{$paddingKey}#{$separator}#{$sizeKey} {
+        padding: sizeValue($sizeKey, $sizeValue) !important;
+    }
+    @each $position in $positions {
+        $posKey: nth($position, 1);
+        $posValue: nth($position, 2);
+        .#{$marginKey}#{$separator}#{$posKey}#{$separator}#{$sizeKey} {
+            margin-#{$posValue}: sizeValue($sizeKey, $sizeValue) !important;
+        }
+        .#{$paddingKey}#{$separator}#{$posKey}#{$separator}#{$sizeKey} {
+            padding-#{$posValue}: sizeValue($sizeKey, $sizeValue) !important;
+        }
+    }
 }
 

@@ -1,6 +1,6 @@
 <template>
-  <div id="projects">
-    <div class="columns">
+  <div>
+    <div class="columns" id="project-container">
       <div class="column is-4">
         <div class="card is-flex flex-column justify-evenly align-center">
           <div class="bg"></div>

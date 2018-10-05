@@ -1,6 +1,6 @@
 <template>
   <div class="columns">
-    <div class="column">
+    <div class="column p-b-none p-t-none">
       <div class="navbar" id="navbar">
         <!-- <div class="logo-div float-l m-l-40 m-r-25">
           <div class="logo"></div>
@@ -38,10 +38,10 @@ export default {
   data () {
     return {
       navButtons: [
-        { name: 'projects',   route: '/',       id: '#projects'    },
-        { name: 'about',  route: '/gallery',  id: '#about' },
-        { name: 'resume',     route: '/book',     id: '#resume'    },
-        { name: 'fun stuff',    route: '/rates',    id: '#fun'   }
+        { name: 'projects',   route: '/',         id: '#projects'},
+        { name: 'about',      route: '/gallery',  id: '#about' },
+        { name: 'resume',     route: '/book',     id: '#resume'},
+        { name: 'fun stuff',  route: '/rates',    id: '#fun'}
       ],
       nav_show: false,
       fullWidth: document.documentElement.clientWidth
@@ -98,13 +98,12 @@ $(function () {
 $(window).resize(function () {
   this.nav_show = false
 })
-window.onscroll = function() { stickyNav() }
+window.onscroll = function () { stickyNav() }
 
-function stickyNav() {
+function stickyNav () {
   var navbar = document.getElementById('navbar')
-  var container = document.getElementById('projects')
-  var sticky = 150
-  if (window.pageYOffset >= sticky) {
+  var container = document.getElementById('project-container')
+  if (window.pageYOffset >= 126) {
     navbar.classList.add('sticky')
     container.classList.add('sticky-offset')
   } else {
