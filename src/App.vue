@@ -18,8 +18,7 @@
 
 <style lang="scss">
 @import "~bulma/sass/utilities/_all";
-$text: #E0DDDA;
-$content-heading-color: #E0DDDA;
+@import './styles/colors.scss';
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 @import './styles/styles.scss';
