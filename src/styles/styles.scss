@@ -7,9 +7,6 @@
   src: url(/assets/fonts/montserrat.ttf) format('ttf');
 }
 
-$bg: #202020;
-$default: #E0DDDA;
-
 html {
   background-color: $bg !important;
 }
@@ -55,7 +52,7 @@ h1 {
 }
 
 .sticky-offset {
-  padding-top: 75px;
+  margin-top: 75px;
 }
 
 .container {
@@ -98,9 +95,6 @@ h1 {
   text-transform: uppercase;
   cursor: pointer;
   border-style: none;
-  &.active {
-
-  }
   &.md {
     height: 35px;
     width: 150px;
@@ -165,6 +159,7 @@ h1 {
   height: 275px;
   border-radius: 1px;
   padding: 15px;
+  border-radius: 2px;
   cursor: pointer;
   overflow: hidden;
   .detail-btn {

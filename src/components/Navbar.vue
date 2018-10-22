@@ -17,7 +17,7 @@
           </a>
         </scrollactive>
         <scrollactive id="nav-collapse" class="unselectable"
-                      :class="{ visible: nav_show }"
+                      :class="{ visible: navShow }"
                       :offset="60" :modifyUrl="false">
           <a v-for="page in navButtons" :href="page.id" id="page.id"
              class="scrollactive-item nav-btn">
@@ -43,7 +43,8 @@ export default {
         { name: 'resume',     route: '/book',     id: '#resume'},
         { name: 'fun stuff',  route: '/rates',    id: '#fun'}
       ],
-      nav_show: false,
+      navShow: false,
+      stickyNav: false,
       fullWidth: document.documentElement.clientWidth
     }
   },
@@ -56,14 +57,14 @@ export default {
   },
   methods: {
     toggleNav() {
-      this.nav_show = !this.nav_show;
+      this.navShow = !this.navShow;
     },
     // whenever the document is resized, re-set the 'fullHeight' variable
     handleResize (event) {
       this.fullWidth = document.documentElement.clientWidth
       //console.log(this.fullWidth)
       if (this.fullWidth >= 768) {
-        this.nav_show = false;
+        this.navShow = false;
       }
     }
   }
@@ -87,7 +88,7 @@ $(function () {
     }
   })
   $(window).resize(function () {
-    this.nav_show = false
+    this.navShow = false
     if ($(window).width() > 768) {
       //nav_regular.removeClass("collapse");
     } else {
@@ -96,7 +97,7 @@ $(function () {
   })
 })
 $(window).resize(function () {
-  this.nav_show = false
+  this.navShow = false
 })
 window.onscroll = function () { stickyNav() }
 
