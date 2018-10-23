@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-    <section class="section">
-      <div class="container">
-        <div id="projects">
-          <title-bar></title-bar>
-          <!-- <hr class="is-marginless"> -->
-          <nav-bar></nav-bar>
-          <project-list></project-list>
+    <section class="section p-x-none p-t-xxl">
+      <div class="columns">
+        <div id="sidebar" class="column is-hidden-mobile is-4">
+          <side-bar></side-bar>
         </div>
-        <about-section></about-section>
-        <resume-section></resume-section>
-        <!-- <router-view/> -->
+        <div class="column is-hidden-mobile is-4"></div>
+        <div class="column">
+          <about-section></about-section>
+          <project-section></project-section>
+        </div>
       </div>
     </section>
   </div>
@@ -21,6 +20,7 @@
 @import './styles/colors.scss';
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+@import './styles/helpers.scss';
 @import './styles/styles.scss';
 @import './styles/navbar.scss';
 </style>
@@ -29,7 +29,8 @@
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue'
 import Titlebar from '@/components/Titlebar.vue'
-import ProjectList from '@/views/Projects.vue'
+import Sidebar from '@/components/Sidebar.vue'
+import ProjectSection from '@/views/Projects.vue'
 import AboutSection from '@/views/About.vue'
 import ResumeSection from '@/views/Resume.vue'
 
@@ -38,7 +39,8 @@ export default {
   components: {
     'nav-bar': Navbar,
     'title-bar': Titlebar,
-    'project-list': ProjectList,
+    'side-bar': Sidebar,
+    'project-section': ProjectSection,
     'resume-section': ResumeSection,
     'about-section': AboutSection
   }

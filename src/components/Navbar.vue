@@ -1,10 +1,19 @@
 <template>
-  <div class="columns">
+  <div class="m-b-xl m-t-lg">
+    <scrollactive id="nav-regular" class="unselectable"
+                  :offset="60" :modifyUrl="false">
+      <a v-for="page in navButtons" :href="page.id" id="page.id"
+         class="scrollactive-item nav-btn">
+        {{page.name}}
+      </a>
+    </scrollactive>
+  </div>
+  <!-- <div class="columns">
     <div class="column p-b-none p-t-none">
       <div class="navbar" id="navbar">
-        <!-- <div class="logo-div float-l m-l-40 m-r-25">
+        <div class="logo-div float-l m-l-40 m-r-25">
           <div class="logo"></div>
-        </div> -->
+        </div>
         <a href="javascript:void(0);" id="hamburger"
            v-on:click="toggleNav()">
           <i class="fa fa-bars"></i>
@@ -26,7 +35,7 @@
         </scrollactive>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
