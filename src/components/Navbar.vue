@@ -1,7 +1,7 @@
 <template>
-  <div class="m-b-xl m-t-lg">
-    <scrollactive id="nav-regular" class="unselectable"
-                  :offset="60" :modifyUrl="false">
+  <div class="m-y-xl p-l-xl">
+    <scrollactive id="nav-regular" class="is-unselectable"
+                  :offset="0" :modifyUrl="false">
       <a v-for="page in navButtons" :href="page.id" id="page.id"
          class="scrollactive-item nav-btn">
         {{page.name}}
@@ -47,13 +47,12 @@ export default {
   data () {
     return {
       navButtons: [
-        { name: 'projects',   route: '/',         id: '#projects'},
-        { name: 'about',      route: '/gallery',  id: '#about' },
-        { name: 'resume',     route: '/book',     id: '#resume'},
+        { name: 'about',      route: '/about',    id: '#about' },
+        { name: 'projects',   route: '/projects', id: '#projects'},
+        { name: 'experience', route: '/experience', id: '#experience'},
         { name: 'fun stuff',  route: '/rates',    id: '#fun'}
       ],
       navShow: false,
-      stickyNav: false,
       fullWidth: document.documentElement.clientWidth
     }
   },
@@ -79,48 +78,9 @@ export default {
   }
 }
 
-$(function () {
-  var navbar = $('.navbar')
-  var logo = $('.logo-div')
-  var nav_regular = $('#nav-regular')
-  var nav_collapse = $('#nav-collapse')
-  var firstLink = $('#projects')
-  $(window).scroll(function () {
-    var scroll = $(window).scrollTop()
-
-    if (scroll >= 200) {
-      // navbar.addClass('darken')
-      // logo.addClass('shrink')
-    } else {
-      // navbar.removeClass('darken')
-      // logo.removeClass('shrink')
-    }
-  })
-  $(window).resize(function () {
-    this.navShow = false
-    if ($(window).width() > 768) {
-      //nav_regular.removeClass("collapse");
-    } else {
-      //nav_regular.addClass("collapse");
-    }
-  })
-})
 $(window).resize(function () {
   this.navShow = false
 })
-window.onscroll = function () { stickyNav() }
-
-function stickyNav () {
-  var navbar = document.getElementById('navbar')
-  var container = document.getElementById('project-container')
-  if (window.pageYOffset >= 126) {
-    navbar.classList.add('sticky')
-    container.classList.add('sticky-offset')
-  } else {
-    navbar.classList.remove('sticky')
-    container.classList.remove('sticky-offset')
-  }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

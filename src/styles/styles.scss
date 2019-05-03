@@ -1,19 +1,15 @@
 @font-face {
-  font-family: 'Gotham';
-  src: url(/assets/fonts/gotham.otf) format('otf');
-}
-@font-face {
-  font-family: 'Montserrat';
-  src: url(/assets/fonts/montserrat.ttf) format('ttf');
-}
-
-@font-face {
   font-family: 'SF Pro Display';
-  src: url(/assets/fonts/SF.otf) format('otf');
+  src: url(/assets/fonts/SF.otf) format('otf'), url(/assets/fonts/SF.ttf) format('ttf');
+  font-weight: normal;
 }
 
 html {
   background-color: $bg !important;
+  font-size: 16px;
+  @media only screen and (max-width: 768px) {
+    font-size: 15px;
+  }
 }
 
 body {
@@ -24,10 +20,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: $default;
   font-weight: 500;
-}
-
-h1 {
-  font-size: 2.5em;
 }
 
 ::selection {
@@ -45,96 +37,188 @@ h1 {
   -moz-osx-font-smoothing: grayscale;
   color: $default;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+
+#bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url('./assets/images/bg.png');
+  -webkit-filter: grayscale(25%);
+  -moz-filter: grayscale(25%);
+  -o-filter: grayscale(25%);
+  -ms-filter: grayscale(25%);
+  filter: grayscale(25%);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;
 }
 
 #sidebar {
   position: fixed;
+  width: 335px;
 }
+
+#mobile-nav-bar {
+  position: fixed;
+  z-index: 99;
+}
+
+#nav-mobile {
+  z-index: 2;
+}
+
+#name-container {
+  height: 50px;
+  width: 100px;
+  text-align: center;
+  @include slanted-bg-size(-8px, 100px, 50px);
+}
+
+#name-container-mobile {
+  padding-top: 0.75em;
+  height: 55px;
+  width: 90px;
+  text-align: center;
+  @include slanted-bg-size(-5px, 90px, 55px);
+}
+
+#last-name-container-mobile {
+  z-index: 1;
+  padding-top: 1em;
+  padding-left: 0.75em;
+  height: 55px;
+}
+
+#main-content {
+  width: 100%;
+  margin-left: calc(275px + 5vw);
+  @media screen and (max-width: 1085px) {
+    margin-left: 0;
+  }
+}
+
+//------------------------------------------------------------------------------
+// Sections
+//------------------------------------------------------------------------------
 
 #contact {
-  z-index: 1;
   position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: $default;
-    transform: skewY(-7deg);
-    height: 250px;
-    width: 85%;
-    z-index: -1;
-  }
-  height: 250px;
+  overflow: visible;
+  height: 240px;
   width: 100%;
+  @include slanted-bg-size(0px, 90%, 240px);
   .content {
-    //transform: skewY(7deg);
+    overflow: visible;
     width: 250px;
-  }
-}
-
-#id {
-  .content {
-    width: 250px;
+    color: $text;
+    width: 100%;
   }
 }
 
 #about {
-  height: 700px;
+  position: relative;
+  padding-bottom: 2vw;
+  .content {
+    max-width: 950px;
+  }
+  @media screen and (min-width: 1407px) {
+    padding-right: 5vw;
+  }
 }
 
 #projects {
   position: relative;
-  z-index: 2;
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: $default;
-    transform: skewY(-7deg);
-    z-index: 1;
-  }
-  height: 750px;
   width: 100%;
-  .content {
-    z-index: 20;
+  transition: 100ms ease-in-out;
+  padding-bottom: 2em;
+  @include slanted-bg-full;
+  @media screen and (min-width: 1407px) {
+    padding: calc(1vw * 1.25) 0;
+    padding-right: 5vw;
   }
 }
 
-.sticky-offset {
-  margin-top: 75px;
+#experience {
+  position: relative;
+  height: 100vh;
 }
 
-.container {
-  padding: 1rem;
+//------------------------------------------------------------------------------
+// About Section
+//------------------------------------------------------------------------------
+#self-portrait {
+  min-height: 250px;
+  min-width: 200px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+  margin-right: 2em;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    margin-bottom: 1em;
+  }
 }
 
-.button.custom {
-  border-radius: 1px;
-  font-size: 15px;
-  font-weight: 800;
-  text-transform: uppercase;
+#about-block-1 {
+  display: flex;
+  align-items: stretch;
+  @media screen and (max-width: 500px) {
+    flex-wrap: wrap;
+  }
+}
+
+.resume {
   cursor: pointer;
-  border-style: none;
-  &.md {
-    height: 35px;
-    width: 150px;
+  @include hover-appear-h6(90px, -4px, 37px);
+  .icon-border {
+    border: 2px solid $text;
+    border-radius: 3px;
+    width: 29px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      font-size: 1.1rem;
+    }
   }
-  &.primary {
-    color: $bg;
-    background: rgba(224,221,218,0.8);
+}
+
+//------------------------------------------------------------------------------
+// Contact Section
+//------------------------------------------------------------------------------
+.contact-details {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 0.75em;
+  @include hover-appear-h6(60px, -2px, 30px);
+  &.extend {
+    @include hover-appear-h6(75px, -2px, 30px);
+  }
+  h6 {
+    margin: 0;
+    overflow: hidden;
+  }
+  i {
+    font-size: 1.8rem;
+  }
+  .icon-border {
+    border: 2px solid $text;
+    border-radius: 3px;
+    width: 29px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -146,50 +230,15 @@ h1 {
   }
 }
 
-.invert-selection::selection {
-    color: rgba(224,221,218,0.99); /* WebKit/Blink Browsers */
-    background: $bg;
-}
-
-.contact-field {
-  ::selection {
-    color: rgba(224,221,218,.99); /* WebKit/Blink Browsers */
-    background: $bg;
-  }
-  color: $default;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  padding: 10px 5px;
-  .contact-label {
-    text-align: center;
-    line-height: 35px;
-    font-size: 1.1rem;
-    font-weight: 900;
-    border-radius: 3px;
-    background: $default;
-    color: $bg;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 0;
-    transition: 150ms linear;
-    height: 35px;
-  }
-  &:hover {
-    .contact-label {
-      &.mail { width: 180px; }
-      &.linkedin { width: 100px; }
-      &.phone { width: 140px; }
-    }
-  }
-}
-
-.about-content {
-  h5 { margin-left: 30px !important; }
+//------------------------------------------------------------------------------
+// Project Section
+//------------------------------------------------------------------------------
+.project-row {
+  max-width: 1200px;
 }
 
 .card {
-  height: 275px;
+  height: 200px;
   border-radius: 1px;
   padding: 15px;
   border-radius: 2px;
@@ -272,48 +321,90 @@ h1 {
     transform: translateY(30px);
     transition: 100ms ease-in-out;
     z-index: 12;
-    font-size: 2rem;
-    font-weight: 900;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: $default;
     text-align: center;
   }
 }
 
-.name-container {
-  transform: skewY(-7deg);
-  height: 55px;
-  width: 110px;
-  background: $default;
-  text-align: center;
-  h3 { padding-top: 8px; }
-  * {
-    transform: skewY(7deg);
+.button.custom {
+  border-radius: 1px;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-style: none;
+  &.md {
+    height: 35px;
+    width: 150px;
+  }
+  &.primary {
+    color: $bg;
+    background: rgba(224,221,218,0.8);
   }
 }
 
-.contact-details {
+//------------------------------------------------------------------------------
+// Experience Section
+//------------------------------------------------------------------------------
+
+#skill-icons {
   display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-  h5 {
-    color: $bg;
-    margin: 0;
-    font-weight: 700;
+}
+
+.skill-icon {
+  $skill-icon-dim: calc(40px + 3vw);
+  $hidden-tooltip-dim: calc(90px + 1.5vw);
+  $tooltip-offset: calc((#{$hidden-tooltip-dim} - #{$skill-icon-dim}) / -2);
+  margin-right: 1.5em;
+  width: $skill-icon-dim;
+  height: $skill-icon-dim;
+  position: relative;
+  cursor: pointer;
+  .img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
   }
-  i {
-    font-size: 2rem;
-    color: $bg;
-  }
-  .icon-border {
-    border: 3px solid $bg;
-    border-radius: 3px;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    i {
-      font-size: 1.3rem;
+  .hidden-tooltip {
+    position: absolute;
+    top: $tooltip-offset;
+    left: $tooltip-offset;
+    width: $hidden-tooltip-dim;
+    height: $hidden-tooltip-dim;
+    transition: 100ms ease-in-out;
+    transform: scale(0);
+    padding: 1em;
+    @include slanted-bg-size(0, $hidden-tooltip-dim, $hidden-tooltip-dim);
+    p {
+      color: $text !important;
+      font-weight: 600;
+      line-height: 1.2em;
+      font-size: 0.9rem;
     }
   }
+  &:hover {
+    .img {
+      -webkit-filter: blur(8px) invert(0.5);
+      -moz-filter: blur(8px) invert(0.5);
+      -o-filter: blur(8px) invert(0.5);
+      -ms-filter: blur(8px) invert(0.5);
+      filter: blur(8px) invert(0.5);
+    }
+    .hidden-tooltip {
+      transform: scale(1);
+      //opacity: 1;
+      //visibility: visible;
+    }
+  }
+}
+
+.modal-bg {
+  z-index: 9999;
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background: $translucent-grey;
 }

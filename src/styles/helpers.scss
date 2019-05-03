@@ -1,26 +1,87 @@
-.inline {
-  display: inline !important;
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
 }
 
-.unselectable {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                        supported by Chrome and Opera */
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
 }
 
-.relative {
-  position: relative !important;
+@mixin slanted-bg {
+  position: relative;
+  .content {
+    z-index: 1;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    background: $translucent-accent;
+    transform: skewY(-6deg);
+  }
+}
+
+@mixin slanted-bg-size($top-offset, $width, $height) {
+  @include slanted-bg;
+  &::before {
+    left: 0;
+    top: $top-offset;
+    width: $width;
+    height: $height;
+  }
+}
+
+@mixin slanted-bg-full {
+  @include slanted-bg;
+  &::before {
+    top: 0; bottom: 0; left: 0; right: 0;
+  }
+}
+
+@mixin hover-appear-h6($width, $slanted-bg-offset, $bg-height) {
+  .hover-appear {
+    white-space: nowrap;
+    margin: 0;
+    margin-left: 0.75em;
+    width: 0;
+    height: 30px;
+    padding-top: 6px;
+    transition: 100ms ease-in-out;
+    @include slanted-bg-size($slanted-bg-offset, 100%, $bg-height);
+    h6 {
+      margin-left: 0.6em;
+      overflow: hidden;
+    }
+  }
+  &:hover {
+    .hover-appear {
+      width: $width;
+    }
+  }
 }
 
 .flex-column {
   flex-direction: column !important;
 }
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+.justify-start {
+  justify-content: flex-start !important;
+}
 .justify-center {
   justify-content: center !important;
+}
+.justify-between {
+  justify-content: space-between !important;
 }
 .justify-evenly {
   justify-content: space-evenly !important;
@@ -34,23 +95,41 @@
 .align-center {
   align-items: center !important;
 }
-
 .align-start {
   align-items: flex-start !important;
 }
-
-.color-light {
-  color: $default !important;
+.align-end {
+  align-items: flex-end !important;
 }
-.color-dark {
-  color: $bg !important;
+.align-left {
+  align-self: flex-start;
 }
 
+.text-center {
+  text-align: center !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+
+.no-wrap {
+  white-space: nowrap !important;
+}
+
+.full-width {
+  width: 100% !important;
+}
+.disable-hover {
+  pointer-events: none !important;
+}
 
 $fontWeights: (
   ('light', 500),
   ('regular', 600),
-  ('semi-bold', 700),
+  ('semibold', 700),
   ('bold', 800),
   ('heavy', 900),
 );
@@ -111,15 +190,19 @@ $positions: (
       }
   }
   .#{$marginKey}#{$separator}x#{$separator}#{$sizeKey} {
-    margin: 0 sizeValue($sizeKey, $sizeValue) !important;
+    margin-left: sizeValue($sizeKey, $sizeValue) !important;
+    margin-right: sizeValue($sizeKey, $sizeValue) !important;
   }
   .#{$marginKey}#{$separator}y#{$separator}#{$sizeKey} {
-    margin: sizeValue($sizeKey, $sizeValue) 0 !important;
+    margin-top: sizeValue($sizeKey, $sizeValue) !important;
+    margin-bottom: sizeValue($sizeKey, $sizeValue) !important;
   }
   .#{$paddingKey}#{$separator}x#{$separator}#{$sizeKey} {
-    padding: 0 sizeValue($sizeKey, $sizeValue) !important;
+    padding-left: sizeValue($sizeKey, $sizeValue) !important;
+    padding-right: sizeValue($sizeKey, $sizeValue) !important;
   }
   .#{$paddingKey}#{$separator}y#{$separator}#{$sizeKey} {
-    padding: sizeValue($sizeKey, $sizeValue) 0 !important;
+    padding-top: sizeValue($sizeKey, $sizeValue) !important;
+    padding-bottom: sizeValue($sizeKey, $sizeValue) !important;
   }
 }
