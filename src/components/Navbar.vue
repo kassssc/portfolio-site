@@ -2,7 +2,7 @@
   <div class="m-y-xl p-l-xl">
     <scrollactive id="nav-regular"
                   class="is-unselectable"
-                  :offset="0"
+                  :offset="25"
                   :modifyUrl="false">
       <a  id="page.id"
           v-for="page in nav_buttons"

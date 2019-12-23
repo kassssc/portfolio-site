@@ -18,7 +18,7 @@
             <div class="card-title">{{ project.title }}</div>
             <div class="card-description">{{ project.description }}</div>
             <button class="button custom md detail-btn">
-              details
+              see details
             </button>
           </div>
         </div>

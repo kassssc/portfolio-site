@@ -82,7 +82,8 @@ export default new Vuex.Store({
 
         ],
         type: '',
-        col_css: 'is-5'
+        col_css: 'is-5',
+        link: "https://bookface-cse210.web.app/"
       },
       {
         title: 'Wisconsin Racing',
@@ -152,7 +153,8 @@ export default new Vuex.Store({
 
         ],
         type: '',
-        col_css: 'is-4'
+        col_css: 'is-4',
+        link: 'https://ezchef-ks.web.app/'
       },
       {
         title: 'Mini-Hangman Game',
@@ -194,7 +196,8 @@ export default new Vuex.Store({
 
         ],
         type: '',
-        col_css: 'is-5'
+        col_css: 'is-5',
+        link: 'https://cuvetlab.web.app/'
       },
       {
         title: 'Command Line GUI Systhesis',
@@ -213,10 +216,52 @@ export default new Vuex.Store({
 
     ],
     technology_list: [
-      { img: 'html.png', name: 'HTML5' },
-      { img: 'css.png', name: 'CSS3' },
-      { img: 'js.png', name: 'Javascript' },
-      { img: 'ts.png', name: 'Typescript' }
+      {
+        group_name: 'Frontend',
+        css: 'frontend',
+        list: [
+          { img: 'html.png',    name: 'HTML5' },
+          { img: 'css.png',     name: 'CSS3' },
+          { img: 'js.png',      name: 'Javascript' },
+          { img: 'ts.png',      name: 'Typescript' },
+          { img: 'angular.png', name: 'Angular' },
+          { img: 'vue.png',     name: 'Vue' },
+          { img: 'react.png',   name: 'React' },
+          { img: 'redux.png',   name: 'Redux' },
+          { img: 'sass.png',    name: 'Sass' },
+          { img: 'jquery.png',  name: 'jQuery' },
+          { img: 'ionic.png',   name: 'Ionic' }
+        ]
+      },
+      {
+        group_name: 'Languages',
+        css: 'languages',
+        list: [
+          { img: 'python.png',  name: 'Python' },
+          { img: 'c.png',       name: 'C' },
+          { img: 'cpp.png',     name: 'C++' },
+          { img: 'swift.png',   name: 'Swift' },
+          { img: 'fortran.png', name: 'Fortran' },
+          { img: 'java.png',    name: 'Java' },
+        ]
+      },
+      {
+        group_name: 'Other Tools',
+        css: 'tools',
+        list: [
+          { img: 'terminal.png',  name: 'Terminal' },
+          { img: 'docker.png',    name: 'Docker' },
+          { img: 'git.png',       name: 'Git' },
+          { img: 'github.png',    name: 'Github' },
+          { img: 'gitlab.png',    name: 'Gitlab' },
+          { img: 'sql.png',       name: 'SQL' },
+          { img: 'node.png',      name: 'NodeJS' },
+          { img: 'xd.png',        name: 'Adobe XD' },
+          { img: 'ps.png',        name: 'Photoshop' },
+          { img: 'ai.png',        name: 'Illustrator' },
+          { img: 'matlab.png',    name: 'Matlab' },
+        ]
+      }
     ]
   },
   getters: {

@@ -21,13 +21,28 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
+a.link {
+  color: $primary;
+  font-weight: 700;
+  font-style: italic;
+  padding: 0.25em;
+  border-radius: 3px;
+  transition: all 100ms ease-in-out;
+  &:hover {
+    background: $primary;
+    color: $bg;
+  }
+}
+
 ::selection {
   background: rgba(224,221,218,.99); /* WebKit/Blink Browsers */
   color: $bg;
+  text-shadow: none;
 }
 ::-moz-selection {
   background: rgba(224,221,218,.99); /* Gecko Browsers */
   color: $bg;
+  text-shadow: none;
 }
 
 #app {
@@ -150,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #experience {
-  padding-bottom: 5vw !important;
+  padding-bottom: 2vw !important;
 }
 
 #resume {
@@ -272,29 +287,31 @@ h1, h2, h3, h4, h5, h6 {
 .card {
   height: 230px;
   border-radius: 2px;
-  padding: 1.25em;
+  padding: 1em;
   cursor: pointer;
   overflow: hidden;
   box-shadow: none;
   background: transparent;
   .card-title {
-    transform: translateY(25px);
+    transform: translateY(40px);
     transition: 100ms ease-in-out;
     z-index: 12;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 800;
     color: $default;
     text-align: center;
     text-shadow: 2px 2px 10px #333333;
   }
   .card-description {
-    transform: translateY(25px);
+    //transform: translateY(25px);
     transition: 100ms ease-in-out;
     font-size: 1rem;
     font-weight: 700;
     color: $default;
     z-index: 12;
     text-shadow: 2px 2px 10px #333333;
+    opacity: 0;
+    visibility: hidden;
   }
   .detail-btn {
     position: relative;
@@ -304,7 +321,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     transition: 100ms ease-in-out;
     color: $default;
-    margin-top: 1em;
+    margin-top: 0.75em;
     backdrop-filter: blur(7px);
   }
   .bg {
@@ -332,21 +349,9 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    &.wr {
-      background: url('./assets/images/steeringwheel.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    &.usda {
-      background: url('./assets/images/usda.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
   }
   &:hover {
-    .detail-btn {
+    .detail-btn, .card-description {
       visibility: visible;
       opacity: 1;
     }
@@ -360,7 +365,7 @@ h1, h2, h3, h4, h5, h6 {
     .bg {
       background: rgba(100,100,100,.45);
     }
-    .card-title, .card-description {
+    .card-title {
       color: $default;
       transform: none;
     }
@@ -375,7 +380,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   border-style: none;
   &.md {
-    height: 40px;
+    height: 45px;
     width: 150px;
   }
   &.primary {
@@ -399,10 +404,10 @@ h1, h2, h3, h4, h5, h6 {
       user-select: none; /* disable user selection */
     }
     &.next {
-      top: 50%; bottom: 50%; right: 10%;
+      top: 45%; right: 10%;
     }
     &.prev {
-      top: 50%; bottom: 50%; left: 10%;
+      top: 45%; left: 10%;
     }
     &.close {
       top: 50px; right: 50px;
@@ -434,6 +439,9 @@ h1, h2, h3, h4, h5, h6 {
     top: -2em;
   }
   display: flex;
+  .content {
+    width: 100%;
+  }
 }
 
 .carousel .carousel-indicator .indicator-item .indicator-style.is-lines {
@@ -450,10 +458,13 @@ h1, h2, h3, h4, h5, h6 {
   overflow: scroll;
 }
 
-.modal .modal-content {
-  max-height: 100vh !important;
-  width: 75vw !important;
-  max-width: 1100px !important;
+.modal {
+  justify-content: flex-start;
+  .modal-content {
+    height: 100vh !important;
+    width: 75vw !important;
+    max-width: 1100px !important;
+  }  
 }
 
 .carousel .carousel-arrow .icon {
@@ -467,9 +478,31 @@ h1, h2, h3, h4, h5, h6 {
 //------------------------------------------------------------------------------
 // Experience Section
 //------------------------------------------------------------------------------
+.skill-group-name-container {
+  height: 40px;
+  padding-top: 0.5em;
+  padding-left: 1em;
+  margin-bottom: 2em;
+  .content {
+    font-size: 1.3rem;
+  }
+  &.frontend {
+    @include slanted-bg-size(-5px, 140px, 55px, 3px);  
+  }
+  &.languages {
+    @include slanted-bg-size(-5px, 160px, 55px, 3px);
+  }
+  &.tools {
+    @include slanted-bg-size(-5px, 165px, 55px, 3px);
+  }
+}
 
-#skill-icons {
+.skill-icons {
   display: flex;
+  max-width: 1000px;
+  flex-wrap: wrap;
+  margin-top: 1.5em;
+  margin-left: 1.2em;
 }
 
 .skill-icon {
@@ -478,11 +511,17 @@ h1, h2, h3, h4, h5, h6 {
   $tooltip-offset: calc(
     (#{$hidden-tooltip-dim} - #{$skill-icon-dim}) / -2
   );
-  margin-right: 1.75em;
   width: $skill-icon-dim;
   height: $skill-icon-dim;
   position: relative;
   cursor: pointer;
+  margin-bottom: 1.75em;
+  &:first-child {
+    //margin-right: calc(40px + 2vw);
+  }
+  &:not(:first-child) {
+    margin-left: calc((40px + 2vw)/1.5);
+  }
   .img {
     background-position: center;
     background-repeat: no-repeat;
@@ -499,6 +538,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: 100ms ease-in-out;
     transform: scale(0);
     padding: 1em;
+    text-align: center;
     @include slanted-bg-size(
       0,
       $hidden-tooltip-dim,

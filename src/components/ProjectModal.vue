@@ -7,6 +7,15 @@
       <h4 class="text-semibold">
         {{ project.description }}
       </h4>
+      <div v-if="project.link"
+           class="m-y-md">
+        <i class="fa fa-link m-r-sm is-size-5" aria-hidden="true"></i>
+        <a :href="project.link"
+           target="_blank"
+           class="link">
+          {{ project.link }}
+        </a>
+      </div>
       <b-carousel
         :indicator="true"
         :indicator-inside="false"

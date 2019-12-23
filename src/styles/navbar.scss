@@ -10,11 +10,11 @@
     // Special case since scrollactive won't allow wrappers around a-tags
     z-index: -1;
   }
-  padding-top: 5px;
+  padding-top: 10px;
   padding-left: 10px;
-  @include slanted-bg-size(-4px, 0, 45px, 3px);
+  @include slanted-bg-size(0px, 0, 45px, 3px);
   &.is-active {
-    @include slanted-bg-size(-4px, calc(100% + 10px), 45px, 3px);
+    @include slanted-bg-size(0px, calc(100% + 10px), 45px, 3px);
     cursor: default;
     &::before {
       transition: all 150ms ease-in-out;
@@ -29,7 +29,7 @@
   }
   &:hover {
     color: #E0DDDA;
-    @include slanted-bg-size(-4px, calc(100% + 10px), 45px, 3px);
+    @include slanted-bg-size(0px, calc(100% + 10px), 45px, 3px);
   }
   /*&::after {
     content: '';
