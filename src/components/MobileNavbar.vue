@@ -1,6 +1,6 @@
 <template>
   <div id="mobile-nav-bar">
-    <div class="content is-flex justify-between">
+    <!-- <div class="content is-flex justify-between">
       <div class="is-flex">
         <div id="name-container-mobile">
           <h2 class="text-semibold m-none">Kass</h2>
@@ -23,7 +23,7 @@
           </a>
         </scrollactive>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -36,12 +36,6 @@ export default {
   name: 'mobile-nav-bar',
   data: function () {
     return {
-      navButtons: [
-        { name: 'about',      route: '/about',    id: '#about' },
-        { name: 'projects',   route: '/projects', id: '#projects'},
-        { name: 'experience', route: '/experience', id: '#experience'},
-        { name: 'fun stuff',  route: '/rates',    id: '#fun'}
-      ],
       navShow: false
     }
   },

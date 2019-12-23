@@ -1,9 +1,15 @@
 <template>
   <div class="m-y-xl p-l-xl">
-    <scrollactive id="nav-regular" class="is-unselectable"
-                  :offset="0" :modifyUrl="false">
-      <a v-for="page in navButtons" :href="page.id" id="page.id"
-         class="scrollactive-item nav-btn">
+    <scrollactive id="nav-regular"
+                  class="is-unselectable"
+                  :offset="0"
+                  :modifyUrl="false">
+      <a  id="page.id"
+          v-for="page in nav_buttons"
+          :key="page.name"
+          :href="page.id"
+          class="scrollactive-item nav-btn"
+          @click="hide_projects_if_necessary()">
         {{page.name}}
       </a>
     </scrollactive>
@@ -39,48 +45,54 @@
 </template>
 
 <script>
-import $ from 'jquery';
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
   name: 'nav-bar',
   components: {
   },
-  data () {
+  data() {
     return {
-      navButtons: [
-        { name: 'about',      route: '/about',    id: '#about' },
-        { name: 'projects',   route: '/projects', id: '#projects'},
-        { name: 'experience', route: '/experience', id: '#experience'},
-        { name: 'fun stuff',  route: '/rates',    id: '#fun'}
-      ],
       navShow: false,
       fullWidth: document.documentElement.clientWidth
     }
   },
   // bind event handlers to the `handleResize` method (defined below)
-  mounted: function () {
+  mounted() {
     window.addEventListener('resize', this.handleResize)
   },
-  beforeDestroy: function () {
+  beforeDestroy() {
     window.removeEventListener('resize', this.handleResize)
   },
+  computed: {
+    ...mapGetters([
+      'nav_buttons',
+      'projects_shown'
+    ])
+  },
   methods: {
+    ...mapActions([
+      'toggle_projects'
+    ]),
+    hide_projects_if_necessary() {
+      if (this.projects_shown) {
+        this.toggle_projects()
+      }
+    },
     toggleNav() {
-      this.navShow = !this.navShow;
+      this.navShow = !this.navShow
     },
     // whenever the document is resized, re-set the 'fullHeight' variable
-    handleResize (event) {
+    handleResize(event) {
       this.fullWidth = document.documentElement.clientWidth
       //console.log(this.fullWidth)
       if (this.fullWidth >= 768) {
-        this.navShow = false;
+        this.navShow = false
       }
     }
   }
 }
 
-$(window).resize(function () {
-  this.navShow = false
-})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -3,47 +3,59 @@
     <div id="name" class="is-flex justify-start">
       <div class="content p-l-xl">
         <div id="name-container">
-          <h1 class="text-semibold m-none">Kass</h1>
+          <div class="content">
+            <h1 class="has-text-weight-bold m-none">Kass</h1>
+          </div>
         </div>
-        <h3 class="m-t-sm m-b-sm text-semibold">Chupongstimun</h3>
+        <h3 class="m-t-sm m-b-sm has-text-weight-bold">Chupongstimun</h3>
       </div>
     </div>
-    <nav-bar></nav-bar>
+    <nav-bar />
     <div id="contact" class="is-flex justify-start align-center p-l-xl">
       <div class="content is-flex flex-column m-t-md">
-        <h4 class="text-bold m-b-xs">GET IN TOUCH</h4>
-        <div class="contact-details" :class="{'extend': copiedEmail}" @click="toClipboard(email)">
-          <i class="far fa-envelope m-r-md"></i>
-          <h6>kass_c@hotmail.com</h6>
+        <h4 class="has-text-weight-black m-b-xs">GET IN TOUCH</h4>
+        <div  class="contact-details"
+              :class="{'extend': copiedEmail}"
+              @click="toClipboard(contact_info.email)">
+          <i class="far fa-envelope sm m-r-md"></i>
+          <h6>{{ contact_info.email }}</h6>
           <div class="hover-appear">
-            <h6 class="text-semibold">{{copiedEmail? 'COPIED' : 'COPY'}}</h6>
+            <div class="content">
+              <h6 class="has-text-weight-bold is-unselectable">
+                {{ copiedEmail? 'COPIED' : 'COPY' }}
+              </h6>
+            </div>
           </div>
         </div>
-        <div class="contact-details" :class="{'extend': copiedPhone}" @click="toClipboard(phonePure)">
-          <div class="icon-border m-r-md">
-            <i class="fas fa-phone"></i>
-          </div>
-          <h6>(858)-346-3512</h6>
+        <div  class="contact-details"
+              :class="{'extend': copiedPhone}"
+              @click="toClipboard(contact_info.phone.pure)">
+          <i class="fas fa-phone m-r-md"></i>
+          <h6>{{ contact_info.phone.display }}</h6>
           <div class="hover-appear">
-            <h6 class="text-semibold">{{copiedPhone? 'COPIED' : 'COPY'}}</h6>
+            <div class="content">
+              <h6 class="has-text-weight-bold is-unselectable">
+                {{ copiedPhone? 'COPIED' : 'COPY' }}
+              </h6>
+            </div>
           </div>
         </div>
-        <div class="contact-details" @click="openNewTab('https://github.com/kassssc')">
-          <div class="icon-border m-r-md">
-            <i class="fab fa-github"></i>
-          </div>
-          <h6>/ kassssc</h6>
+        <div class="contact-details" @click="openNewTab(contact_info.github.link)">
+          <i class="fab fa-github m-r-md"></i>
+          <h6>{{ contact_info.github.display }}</h6>
           <div class="hover-appear">
-            <h6 class="text-semibold">VISIT</h6>
+            <div class="content">
+              <h6 class="has-text-weight-bold is-unselectable">VISIT</h6>
+            </div>
           </div>
         </div>
-        <div class="contact-details" @click="openNewTab('https://www.linkedin.com/in/kassss')">
-          <div class="icon-border m-r-md">
-            <i class="fab fa-linkedin-in"></i>
-          </div>
-          <h6>/ kassss</h6>
+        <div class="contact-details" @click="openNewTab(contact_info.linkedin.link)">
+          <i class="fab fa-linkedin-in m-r-md m-b-xs"></i>
+          <h6>{{ contact_info.linkedin.display }}</h6>
           <div class="hover-appear">
-            <h6 class="text-semibold">VISIT</h6>
+            <div class="content">
+              <h6 class="has-text-weight-bold is-unselectable">VISIT</h6>
+            </div>
           </div>
         </div>
       </div>
@@ -52,37 +64,41 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Navbar from '@/components/Navbar.vue'
+
 export default {
   name: 'side-bar',
   components: {
-    'nav-bar': Navbar,
+    'nav-bar': Navbar
   },
-  data: () => {
+  data() {
     return {
-      email: 'kass_c@hotmail.com',
-      phoneFormat: '(858) 346-3512',
-      phonePure: '8583463512',
       copiedEmail: false,
       copiedPhone: false
     }
   },
+  computed: {
+    ...mapGetters([
+      'contact_info'
+    ])
+  },
   methods: {
-    toClipboard: function (text) {
-      const delay = new Promise(
-        resolve => {
-          if (text === this.email) {
+    toClipboard(text) {
+      console.log(text)
+      console.log(this)
+      const delay = new Promise(resolve => {
+          if (text === this.contact_info.email) {
             this.copiedEmail = true
-          } else if (text === this.phonePure) {
+          } else if (text === this.contact_info.phone.pure) {
             this.copiedPhone = true
           }
           setTimeout(resolve, 750)
-        }
-      )
-      delay.then( () => {
-        if (text === this.email) {
+      })
+      delay.then(() => {
+        if (text === this.contact_info.email) {
           this.copiedEmail = false
-        } else if (text === this.phonePure) {
+        } else if (text === this.contact_info.phone.pure) {
           this.copiedPhone = false
         }
       })
@@ -96,7 +112,7 @@ export default {
       document.execCommand('copy')
       document.body.removeChild(el)
     },
-    openNewTab: function (url) {
+    openNewTab(url) {
       window.open(url, '_blank')
     }
   }

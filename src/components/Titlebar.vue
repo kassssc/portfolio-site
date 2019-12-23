@@ -2,8 +2,12 @@
   <div class="columns m-b-none">
     <div class="column">
       <div class="content is-large has-text-weight-bold is-flex">
-        <div class="name m-r-md"><h2 class="is-marginless invert-selection">Kass</h2></div>
-        <div class="last-name"><h2 class="is-marginless">Chupongstimun</h2></div>
+        <div class="name m-r-md">
+          <h2 class="is-marginless invert-selection">Kass</h2>
+        </div>
+        <div class="last-name">
+          <h2 class="is-marginless">Chupongstimun</h2>
+        </div>
       </div>
     </div>
     <div class="column">

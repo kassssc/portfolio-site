@@ -16,21 +16,23 @@
   @return mix(black, $color, $percentage);
 }
 
-@mixin slanted-bg {
+@mixin slanted-bg($blur) {
   position: relative;
   .content {
-    z-index: 1;
+    position: relative;
   }
   &::before {
     content: '';
     position: absolute;
     background: $translucent-accent;
     transform: skewY(-6deg);
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
   }
 }
 
-@mixin slanted-bg-size($top-offset, $width, $height) {
-  @include slanted-bg;
+@mixin slanted-bg-size($top-offset, $width, $height, $blur) {
+  @include slanted-bg($blur);
   &::before {
     left: 0;
     top: $top-offset;
@@ -39,9 +41,10 @@
   }
 }
 
-@mixin slanted-bg-full {
-  @include slanted-bg;
+@mixin slanted-bg-full($blur) {
+  @include slanted-bg($blur);
   &::before {
+    position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;
   }
 }
@@ -55,10 +58,11 @@
     height: 30px;
     padding-top: 6px;
     transition: 100ms ease-in-out;
-    @include slanted-bg-size($slanted-bg-offset, 100%, $bg-height);
+    @include slanted-bg-size($slanted-bg-offset, 100%, $bg-height, 3px);
     h6 {
       margin-left: 0.6em;
       overflow: hidden;
+      z-index: 2;
     }
   }
   &:hover {
@@ -126,6 +130,10 @@
   pointer-events: none !important;
 }
 
+.has-text-weight-black {
+  font-weight: 800 !important;
+}
+
 $fontWeights: (
   ('light', 500),
   ('regular', 600),
@@ -134,7 +142,7 @@ $fontWeights: (
   ('heavy', 900),
 );
 
-$fontWeightKey: 'text-';
+$fontWeightKey: 'weight-';
 @each $weight in $fontWeights {
   $weightKey: nth($weight, 1);
   $weightValue: nth($weight, 2);

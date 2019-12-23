@@ -1,13 +1,21 @@
 <template>
-  <div id="experience">
-    <div class="content p-x-xl p-y-lg">
-      <h1 class="text-bold p-t-lg">EXPERIENCE</h1>
-      <h5 class="text-semibold">Technologies I use</h5>
+  <div id="experience" class="main-section">
+    <div class="content">
+      <h1 class="has-text-weight-black p-t-lg">EXPERIENCE</h1>
+      <h5 class="has-text-weight-bold">Technologies I have experience with</h5>
       <div id="skill-icons" class="m-t-lg">
-        <div v-for="skillIcon in skillIconList" class="skill-icon is-unselectable">
-          <div class="img" :style="{'background-image': genURL(skillIcon.img, 'png')}"></div>
+        <div  v-for="technology in technology_list"
+              :key="technology.name"
+              class="skill-icon is-unselectable">
+          <div  class="img"
+                :style="{'background-image': genURL(technology.img)}">
+          </div>
           <div class="hidden-tooltip is-flex align-center justify-center">
-            <h4 class="m-b-xs text-bold">{{skillIcon.name}}</h4>
+            <div class="content">
+              <h5 class="m-b-xs has-text-weight-black">
+                {{ technology.name }}
+              </h5>
+            </div>
           </div>
         </div>
       </div>
@@ -16,23 +24,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'experience-section',
-  data () {
-    return {
-      skillIconList: [
-        {img: 'html', name: 'HTML5', tooltip: 'HTML5'},
-        {img: 'css', name: 'CSS3', tooltip: 'CSS3'},
-        {img: 'js', name: 'Javascript', tooltip: 'Javascript'},
-        {img: 'ts', name: 'Typescript', tooltip: 'Typescript'},
-      ]
-    }
-  },
-  methods: {
-
+  computed: {
+    ...mapGetters([
+      'technology_list'
+    ])
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>

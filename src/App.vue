@@ -3,20 +3,21 @@
     <div id="bg"></div>
     <section class="section p-none">
       <div class="is-hidden-tablet">
-        <mobile-nav-bar></mobile-nav-bar>
+        <mobile-nav-bar />
       </div>
       <div class="is-flex justify-between">
-        <div id="sidebar" class="is-hidden-touch p-t-xl">
-          <side-bar></side-bar>
+        <div id="sidebar" class="is-hidden-touch">
+          <side-bar />
         </div>
-        <div id="main-content" class="is-marginless-mobile is-flex flex-column">
-          <about-section></about-section>
-          <project-section></project-section>
-          <experience-section></experience-section>
+        <div id="main-content"
+             class="is-marginless-mobile is-flex flex-column">
+          <about-section />
+          <portfolio-section />
+          <experience-section />
+          <resume-section />
         </div>
       </div>
     </section>
-    <!-- <div class="modal-bg"></div> -->
   </div>
 </template>
 
@@ -32,13 +33,17 @@
 
 <script>
 // @ is an alias to /src
+import { mapGetters, mapActions } from 'vuex'
+
 import Navbar from '@/components/Navbar.vue'
 import MobileNavbar from '@/components/MobileNavbar.vue'
 import Titlebar from '@/components/Titlebar.vue'
 import Sidebar from '@/components/Sidebar.vue'
-import ProjectSection from '@/views/Projects.vue'
+import PortfolioSection from '@/views/Portfolio.vue'
 import AboutSection from '@/views/About.vue'
 import ExperienceSection from '@/views/Experience.vue'
+import ResumeSection from '@/views/Resume.vue'
+
 
 export default {
   name: 'home',
@@ -47,15 +52,15 @@ export default {
     'mobile-nav-bar': MobileNavbar,
     'title-bar': Titlebar,
     'side-bar': Sidebar,
-    'project-section': ProjectSection,
+    'portfolio-section': PortfolioSection,
     'experience-section': ExperienceSection,
-    'about-section': AboutSection
+    'about-section': AboutSection,
+    'resume-section': ResumeSection
   },
-  data: function () {
+  data () {
     return {
-      //timer: undefined
     }
-  },
+  }
   /*methods: {
     handleScroll: function () {
       let projects = document.getElementById('projects')
