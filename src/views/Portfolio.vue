@@ -91,6 +91,17 @@ export default {
     prev_project() {
       this.selected_project_idx = (((this.selected_project_idx - 1) % this.project_list.length) + this.project_list.length) % this.project_list.length
     }
+  },
+  mounted() {
+    window.addEventListener('keydown', e => {
+		  if (this.modal_active) {
+        if (e.key === 'ArrowLeft') {
+          this.prev_project()
+        } else if (e.key === 'ArrowRight') {
+          this.next_project()
+        }
+      }
+	  })
   }
 }
 </script>

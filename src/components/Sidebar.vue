@@ -58,6 +58,15 @@
             </div>
           </div>
         </div>
+        <div class="contact-details" @click="openNewTab(contact_info.medium.link)">
+          <div class="custom-icon m-r-md"></div>
+          <h6>{{ contact_info.medium.display }}</h6>
+          <div class="hover-appear">
+            <div class="content">
+              <h6 class="has-text-weight-bold is-unselectable">VISIT</h6>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

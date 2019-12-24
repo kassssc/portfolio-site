@@ -6,9 +6,9 @@
 html {
   background-color: $bg !important;
   font-size: 18px;
-  @media only screen and (max-width: 768px) {
-    font-size: 15px;
-  }
+  //@media only screen and (max-width: 768px) {
+  //  font-size: 15px;
+  //}
 }
 
 body {
@@ -136,9 +136,9 @@ a.link {
 #contact {
   position: relative;
   overflow: visible;
-  height: 275px;
+  height: 325px;
   width: 100%;
-  @include slanted-bg-size(0px, 87%, 275px, 5px);
+  @include slanted-bg-size(0px, 87%, 325px, 5px);
   .content {
     overflow: visible;
     width: 250px;
@@ -251,9 +251,14 @@ a.link {
   }
   i {
     font-size: 1.5rem;
-    &.sm {
-      font-size: 1.8rem;
-    }
+  }
+  .custom-icon {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('./assets/images/medium.png');
+    width: 23px;
+    height: 27px;
   }
   .icon-border {
     border: 2px solid $text;
@@ -499,7 +504,7 @@ a.link {
 
 .skill-icons {
   display: flex;
-  max-width: 1000px;
+  max-width: calc(960px + 5vw);
   flex-wrap: wrap;
   margin-top: 1.5em;
   margin-left: 1.2em;
@@ -513,6 +518,8 @@ a.link {
   );
   width: $skill-icon-dim;
   height: $skill-icon-dim;
+  max-width: 90px;
+  max-height: 90px;
   position: relative;
   cursor: pointer;
   margin-bottom: 1.75em;
@@ -535,6 +542,8 @@ a.link {
     left: $tooltip-offset;
     width: $hidden-tooltip-dim;
     height: $hidden-tooltip-dim;
+    max-height: 130px;
+    max-width: 130px;
     transition: 100ms ease-in-out;
     transform: scale(0);
     padding: 1em;

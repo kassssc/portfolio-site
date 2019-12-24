@@ -25,6 +25,10 @@ export default new Vuex.Store({
       linkedin: {
         display: '/kassss',
         link: 'https://www.linkedin.com/in/kassss'
+      },
+      medium: {
+        display: '@kassss',
+        link: 'https://medium.com/@kassss'
       }
     },
     project_list: [
@@ -251,6 +255,7 @@ export default new Vuex.Store({
         list: [
           { img: 'terminal.png',  name: 'Terminal' },
           { img: 'docker.png',    name: 'Docker' },
+          { img: 'vs.png',        name: 'VS Code' },
           { img: 'git.png',       name: 'Git' },
           { img: 'github.png',    name: 'Github' },
           { img: 'gitlab.png',    name: 'Gitlab' },
