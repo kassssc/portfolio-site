@@ -1,22 +1,22 @@
 <template>
-  <div>
-    <div class="columns">
-      <div class="column">
-        <pdf src="../assets/resume.pdf"></pdf>
-      </div>
-    </div>
+  <div id="resume" class="main-section">
+    <div class="content">
+      <h1 class="has-text-weight-black p-t-lg">FULL RESUME</h1>
+    </div>     
   </div>
 </template>
 
 <script>
-import pdf from 'vue-pdf'
 export default {
   name: 'resume-section',
-  components: { pdf },
   data () {
     return {
-      currentPage: 0,
-      pageCount: 0
+      skillIconList: [
+        { img: 'html.png', name: 'HTML5' },
+        { img: 'css.png', name: 'CSS3' },
+        { img: 'js.png', name: 'Javascript' },
+        { img: 'ts.png', name: 'Typescript' }
+      ]
     }
   },
   methods: {

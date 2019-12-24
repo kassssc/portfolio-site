@@ -1,24 +1,66 @@
 <template>
-  <div id="about" class="m-t-xl p-t-md">
-    <div class="columns">
-      <div class="column is-7">
-        <div class="content is-large has-text-weight-bold">
-          <h2>About Me</h2>
+  <div id="about" class="main-section">
+    <div class="content">
+      <h1 class="has-text-weight-black">ABOUT</h1>
+      <div class="is-flex flex-column">
+        <div id="about-block-1">
+          <!--<div id="self-portrait"
+               :style="{'background-image': genURL('me', 'png')}">
+          </div> -->
+          <div class="is-flex flex-column">
+            <div>
+              <h4 class="has-text-weight-bold m-b-sm">
+                Software Engineering, DevOps, & Design
+              </h4>
+              <p class="has-text-weight-medium">
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+              </p>
+            </div>
+            <div class="is-hidden-mobile m-t-md">
+              <h4 class="has-text-weight-bold m-b-sm">
+                Education
+              </h4>
+              <p class="has-text-weight-medium m-b-none">
+                UW Madison - B.S. Computer Science & Electrical Engineering, May 2018
+              </p>
+              <p class="has-text-weight-medium">
+                UC San Diego - M.S. Computer Science, June 2020
+              </p>
+              <div class="resume is-flex align-center m-t-md">
+                <h4 class="has-text-weight-bold m-b-none">
+                  Resume
+                </h4>
+                <div class="icon-wrapper m-l-sm is-flex align-center justify-center">
+                  <i class="far fa-file-pdf"></i>
+                </div>
+                <div class="hover-appear">
+                  <div class="content">
+                    <h6 class="has-text-weight-bold is-unselectable">View PDF</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="content about-content">
-          <h3 class="has-text-weight-bold">Kasitsak (Kass) Chupongstimun</h3>
-          <h5 class="has-text-weight-semibold">Pronounced "kah-sit-sak chu-pong-sa-thit-mun"</h5>
-          <h3 class="has-text-weight-bold">Bangkok boy, born and raised.</h3>
-          <h5 class="has-text-weight-semibold">Grew up with street food, motorcycle taxis, and unbelievably horrendous traffic</h5>
-          <h5 class="has-text-weight-semibold">Highschool in the suburbs of New York City</h5>
-          <h5 class="has-text-weight-semibold">B.S. Computer Sciences (end Electrical Engineering) at UW-Madison</h5>
-          <h5 class="has-text-weight-semibold">M.S. Computer Sciences at UC San Diego</h5>
-          <h3 class="has-text-weight-bold">I'm a minimalist</h3>
-          <h3 class="has-text-weight-bold">Software Engineer, UX/UI Designer</h3>
-          <h5 class="has-text-weight-semibold">Software should make life easier, not the other way round, it's my job to make sure that's the case</h5>
+        <div class="is-hidden-tablet m-t-md">
+          <h4 class="has-text-weight-bold m-b-sm">
+            Education
+          </h4>
+          <p class="has-text-weight-medium m-b-none">
+            UW Madison - B.S. Computer Science & Electrical Engineering, May 2018
+          </p>
+          <p class="has-text-weight-medium">
+            UC San Diego - M.S. Computer Science, Expected June 2020
+          </p>
+          <div class="resume is-flex align-center m-t-md">
+            <h4 class="has-text-weight-bold m-b-none m-r-md">
+              Resume
+            </h4>
+            <div class="icon-border m-r-md">
+              <i class="far fa-file-pdf"></i>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="column is-5">
       </div>
     </div>
   </div>
