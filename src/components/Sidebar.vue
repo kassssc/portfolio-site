@@ -59,7 +59,7 @@
           </div>
         </div>
         <div class="contact-details" @click="openNewTab(contact_info.medium.link)">
-          <div class="custom-icon m-r-md"></div>
+          <i class="fab fa-medium-m m-r-md m-b-xs"></i>
           <h6>{{ contact_info.medium.display }}</h6>
           <div class="hover-appear">
             <div class="content">

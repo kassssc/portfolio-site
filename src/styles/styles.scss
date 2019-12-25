@@ -196,21 +196,6 @@ a.link {
 //------------------------------------------------------------------------------
 // About Section
 //------------------------------------------------------------------------------
-#self-portrait {
-  min-height: 250px;
-  min-width: 200px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 2px;
-  margin-right: 2em;
-  @media screen and (max-width: 500px) {
-    width: 100%;
-  }
-  @media screen and (max-width: 768px) {
-    margin-bottom: 1em;
-  }
-}
 
 #about-block-1 {
   display: flex;
@@ -251,26 +236,6 @@ a.link {
   }
   i {
     font-size: 1.5rem;
-  }
-  .custom-icon {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-image: url('./assets/images/medium.png');
-    width: 23px;
-    height: 27px;
-  }
-  .icon-border {
-    border: 2px solid $text;
-    border-radius: 3px;
-    width: 29px;
-    height: 29px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    i {
-      font-size: 1.2rem;
-    }
   }
 }
 
@@ -511,37 +476,31 @@ a.link {
 }
 
 .skill-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   $skill-icon-dim: calc(40px + 2vw);
-  $hidden-tooltip-dim: calc(90px + 1.5vw);
-  $tooltip-offset: calc(
-    (#{$hidden-tooltip-dim} - #{$skill-icon-dim}) / -2
-  );
   width: $skill-icon-dim;
   height: $skill-icon-dim;
-  max-width: 90px;
-  max-height: 90px;
   position: relative;
   cursor: pointer;
   margin-bottom: 1.75em;
-  &:first-child {
-    //margin-right: calc(40px + 2vw);
-  }
   &:not(:first-child) {
-    margin-left: calc((40px + 2vw)/1.5);
+    margin-left: calc(#{$skill-icon-dim}/1.5);
   }
   .img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    position: absolute;
+    width: $skill-icon-dim;
+    height: $skill-icon-dim;
+    position: absolute !important;
     top: 0; left: 0; right: 0; bottom: 0;
   }
   .hidden-tooltip {
-    position: absolute;
-    top: $tooltip-offset;
-    left: $tooltip-offset;
-    width: $hidden-tooltip-dim;
-    height: $hidden-tooltip-dim;
+    $hidden-tooltip-dim: calc(90px + 1.5vw);
+    min-width: $hidden-tooltip-dim;
+    min-height: $hidden-tooltip-dim;
     max-height: 130px;
     max-width: 130px;
     transition: 100ms ease-in-out;
