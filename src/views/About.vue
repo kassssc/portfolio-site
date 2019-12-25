@@ -26,7 +26,8 @@
               <p class="has-text-weight-medium">
                 UC San Diego - M.S. Computer Science, June 2020
               </p>
-              <div class="resume is-flex align-center m-t-md">
+              <div class="resume is-flex align-center m-t-md"
+                   @click="show_resume()">
                 <h4 class="has-text-weight-bold m-b-none">
                   Resume
                 </h4>
@@ -74,7 +75,9 @@ export default {
     return {}
   },
   methods: {
-
+    show_resume() {
+      window.open('/resume.pdf', '_blank')
+    }
   }
 }
 </script>

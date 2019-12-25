@@ -94,8 +94,6 @@ export default {
   },
   methods: {
     toClipboard(text) {
-      console.log(text)
-      console.log(this)
       const delay = new Promise(resolve => {
           if (text === this.contact_info.email) {
             this.copiedEmail = true

@@ -399,16 +399,15 @@ a.link {
 
 .project-modal {
   @include slanted-bg-full(20px);
+  display: flex;
   margin-top: 6em;
   margin-bottom: 3em;
   padding: 3em;
   min-height: 60vh;
   &::before {
     background: rgba($color: #111111, $alpha: 0.5);
-    //box-shadow: 5px 5px 25px #202020;
     top: -2em;
   }
-  display: flex;
   .content {
     width: 100%;
   }
@@ -476,13 +475,13 @@ a.link {
 }
 
 .skill-icon {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   $skill-icon-dim: calc(40px + 2vw);
   width: $skill-icon-dim;
   height: $skill-icon-dim;
-  position: relative;
   cursor: pointer;
   margin-bottom: 1.75em;
   &:not(:first-child) {
@@ -513,12 +512,6 @@ a.link {
       $hidden-tooltip-dim,
       12px
     );
-    p {
-      color: $text !important;
-      font-weight: 600;
-      line-height: 1.2em;
-      font-size: 0.9rem;
-    }
   }
   &:hover {
     .hidden-tooltip {
