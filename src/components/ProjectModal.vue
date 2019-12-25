@@ -28,21 +28,23 @@
           <img :src="img.url" height="500" width="500"/>
         </b-carousel-item>
       </b-carousel>
-      <h4 class="text-semibold">
-        Short description
-      </h4>
-      <h4 class="text-semibold">
-        Short description
-      </h4>
-      <h4 class="text-semibold">
-        Short description
-      </h4>
-      <h4 class="text-semibold">
-        Short description
-      </h4>
-      <h4 class="text-semibold">
-        Short description
-      </h4>
+      <div v-if="project.technologies"
+           class="is-flex full-width p-t-md p-b-md">
+        <div v-for="(tech, idx) in project.technologies"
+             :key="idx"
+             class="tech-icon">
+          <div class="img"
+               :style="{'background-image': genURL(tech_info[tech].img)}">
+          </div>
+          <div class="hidden-tooltip">
+            <div class="content">
+              <div class="has-text-weight-bold is-unselectable">
+                {{ tech_info[tech].name }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -54,6 +56,11 @@ export default {
   name: 'project-modal',
   props: {
 		project: Object
+  },
+  computed: {
+    ...mapGetters([
+      'tech_info'
+    ])
   },
   data() {
     return {

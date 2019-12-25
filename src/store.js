@@ -40,8 +40,11 @@ export default new Vuex.Store({
 
         ],
         details: '',
-        technologies: [
+        bullet_points: [
 
+        ],
+        technologies: [
+          'angular', 'ts', 'html', 'sass', 'docker', 'node', 'rest'
         ],
         type: '',
         col_css: 'is-4'
@@ -51,11 +54,14 @@ export default new Vuex.Store({
         description: 'Gesture-controlled Wi-Fi light bulbs',
         card_bg: 'homealive.png',
         images: [
-
+          
         ],
         details: '',
-        technologies: [
+        bullet_points: [
 
+        ],
+        technologies: [
+          'python', 'cs', 'rest', 'networks'
         ],
         type: '',
         col_css: 'is-3'
@@ -68,8 +74,11 @@ export default new Vuex.Store({
 
         ],
         details: '',
-        technologies: [
+        bullet_points: [
 
+        ],
+        technologies: [
+          'python', 'embedded', 'rest'
         ],
         type: '',
         col_css: 'is-5'
@@ -82,8 +91,11 @@ export default new Vuex.Store({
 
         ],
         details: '',
-        technologies: [
+        bullet_points: [
 
+        ],
+        technologies: [
+          'react', 'redux', 'js', 'html', 'sass', 'python', 'rest'
         ],
         type: '',
         col_css: 'is-5',
@@ -97,8 +109,11 @@ export default new Vuex.Store({
 
         ],
         details: '',
-        technologies: [
+        bullet_points: [
 
+        ],
+        technologies: [
+          'c', 'embedded', 'networks'
         ],
         type: '',
         col_css: 'is-4'
@@ -111,8 +126,11 @@ export default new Vuex.Store({
 
         ],
         details: '',
-        technologies: [
+        bullet_points: [
 
+        ],
+        technologies: [
+          'python'
         ],
         type: '',
         col_css: 'is-3'
@@ -125,8 +143,11 @@ export default new Vuex.Store({
 
         ],
         details: '',
-        technologies: [
+        bullet_points: [
 
+        ],
+        technologies: [
+          'vue', 'js'
         ],
         type: '',
         col_css: 'is-4'
@@ -139,8 +160,11 @@ export default new Vuex.Store({
 
         ],
         details: '',
-        technologies: [
+        bullet_points: [
 
+        ],
+        technologies: [
+          'ionic', 'angular', 'ts'
         ],
         type: '',
         col_css: 'is-4'
@@ -153,8 +177,11 @@ export default new Vuex.Store({
 
         ],
         details: '',
-        technologies: [
+        bullet_points: [
 
+        ],
+        technologies: [
+          'vue'
         ],
         type: '',
         col_css: 'is-4',
@@ -168,8 +195,11 @@ export default new Vuex.Store({
 
         ],
         details: '',
-        technologies: [
+        bullet_points: [
 
+        ],
+        technologies: [
+          'c'
         ],
         type: '',
         col_css: 'is-3'
@@ -182,8 +212,11 @@ export default new Vuex.Store({
 
         ],
         details: '',
-        technologies: [
+        bullet_points: [
 
+        ],
+        technologies: [
+          'python', 'networks'
         ],
         type: '',
         col_css: 'is-4'
@@ -196,21 +229,27 @@ export default new Vuex.Store({
 
         ],
         details: '',
-        technologies: [
+        bullet_points: [
 
+        ],
+        technologies: [
+ 
         ],
         type: '',
         col_css: 'is-5',
         link: 'https://cuvetlab.web.app/'
       },
       {
-        title: 'Command Line GUI Systhesis',
+        title: 'Command Line GUI Synthesis',
         description: 'Research comparing 2 different designs of synthesized command line GUI',
         card_bg: 'gui.png',
         images: [
 
         ],
         details: '',
+        bullet_points: [
+
+        ],
         technologies: [
 
         ],
@@ -219,52 +258,107 @@ export default new Vuex.Store({
       },
 
     ],
-    technology_list: [
+    tech_info: {
+      html:     { img: 'html.png',      name: 'HTML5' },
+      css:      { img: 'css.png',       name: 'CSS3' },
+      js:       { img: 'js.png',        name: 'Javascript' },
+      ts:       { img: 'ts.png',        name: 'Typescript' },
+      angular:  { img: 'angular.png',   name: 'Angular' },
+      vue:      { img: 'vue.png',       name: 'Vue' },
+      react:    { img: 'react.png',     name: 'React' },
+      redux:    { img: 'redux.png',     name: 'Redux' },
+      sass:     { img: 'sass.png',      name: 'SASS/SCSS' },
+      jquery:   { img: 'jquery.png',    name: 'jQuery' },
+      ionic:    { img: 'ionic.png',     name: 'Ionic' },
+      python:   { img: 'python.png',    name: 'Python' },
+      c:        { img: 'c.png',         name: 'C' },
+      cpp:      { img: 'cpp.png',       name: 'C++' },
+      cs:       { img: 'cs.png',        name: 'C#' },
+      swift:    { img: 'swift.png',     name: 'Swift' },
+      fortran:  { img: 'fortran.png',   name: 'Fortran' },
+      java:     { img: 'java.png',      name: 'Java' },
+      terminal: { img: 'terminal.png',  name: 'Terminal' },
+      docker:   { img: 'docker.png',    name: 'Docker' },
+      gcloud:   { img: 'gcloud.png',    name: 'Google Cloud Platform' },
+      aws:      { img: 'aws.png',       name: 'AWS' },
+      vs:       { img: 'vs.png',        name: 'VS Code' },
+      git:      { img: 'git.png',       name: 'Git' },
+      github:   { img: 'github.png',    name: 'Github' },
+      gitlab:   { img: 'gitlab.png',    name: 'Gitlab' },
+      xd:       { img: 'xd.png',        name: 'Adobe XD' },
+      ps:       { img: 'ps.png',        name: 'Photoshop' },
+      ai:       { img: 'ai.png',        name: 'Illustrator' },
+      matlab:   { img: 'matlab.png',    name: 'Matlab' },
+      slack:    { img: 'slack.png',     name: 'Slack' },
+      trello:   { img: 'trello.png',    name: 'Trello' },
+      zenhub:   { img: 'zenhub.png',    name: 'Zenhub' },
+      sql:      { img: 'sql.png',       name: 'SQL' },
+      node:     { img: 'node.png',      name: 'NodeJS' },
+      rest:     { img: 'rest.png',      name: 'REST API' },
+      embedded: { img: 'embedded.png',  name: 'Embedded Programming' },
+      networks: { img: 'networks.png',  name: 'Networks Programming' }
+    },
+    tech_list: [
       {
         group_name: 'Frontend',
         css: 'frontend',
         list: [
-          { img: 'html.png',    name: 'HTML5' },
-          { img: 'css.png',     name: 'CSS3' },
-          { img: 'js.png',      name: 'Javascript' },
-          { img: 'ts.png',      name: 'Typescript' },
-          { img: 'angular.png', name: 'Angular' },
-          { img: 'vue.png',     name: 'Vue' },
-          { img: 'react.png',   name: 'React' },
-          { img: 'redux.png',   name: 'Redux' },
-          { img: 'sass.png',    name: 'Sass' },
-          { img: 'jquery.png',  name: 'jQuery' },
-          { img: 'ionic.png',   name: 'Ionic' }
+          'html',
+          'css',
+          'js',
+          'ts',
+          'angular',
+          'vue',
+          'react',
+          'redux',
+          'sass',
+          'jquery',
+          'ionic'
         ]
       },
       {
         group_name: 'Languages',
         css: 'languages',
         list: [
-          { img: 'python.png',  name: 'Python' },
-          { img: 'c.png',       name: 'C' },
-          { img: 'cpp.png',     name: 'C++' },
-          { img: 'swift.png',   name: 'Swift' },
-          { img: 'fortran.png', name: 'Fortran' },
-          { img: 'java.png',    name: 'Java' },
+          'python',
+          'c',
+          'cpp',
+          'cs',
+          'swift',
+          'fortran',
+          'java'
         ]
       },
       {
         group_name: 'Other Tools',
         css: 'tools',
         list: [
-          { img: 'terminal.png',  name: 'Terminal' },
-          { img: 'docker.png',    name: 'Docker' },
-          { img: 'vs.png',        name: 'VS Code' },
-          { img: 'git.png',       name: 'Git' },
-          { img: 'github.png',    name: 'Github' },
-          { img: 'gitlab.png',    name: 'Gitlab' },
-          { img: 'sql.png',       name: 'SQL' },
-          { img: 'node.png',      name: 'NodeJS' },
-          { img: 'xd.png',        name: 'Adobe XD' },
-          { img: 'ps.png',        name: 'Photoshop' },
-          { img: 'ai.png',        name: 'Illustrator' },
-          { img: 'matlab.png',    name: 'Matlab' },
+          'terminal',
+          'docker',
+          'gcloud',
+          'aws',
+          'vs',
+          'git',
+          'github',
+          'gitlab',
+          'xd',
+          'ps',
+          'ai',
+          'matlab',
+          'slack',
+          'trello',
+          'zenhub'
+        ]
+      },
+      {
+        group_name: 'Technical',
+        css: 'technical',
+        list: [
+          'sql',
+          'node',
+          'rest',
+          'embedded',
+          'networks'
         ]
       }
     ]
@@ -279,8 +373,11 @@ export default new Vuex.Store({
     project_list: state => {
       return state.project_list
     },
-    technology_list: state => {
-      return state.technology_list
+    tech_info: state => {
+      return state.tech_info
+    },
+    tech_list: state => {
+      return state.tech_list
     }
 	},
   mutations: {

@@ -18,7 +18,7 @@
               :class="{'extend': copiedEmail}"
               @click="toClipboard(contact_info.email)">
           <i class="far fa-envelope sm m-r-md"></i>
-          <h6>{{ contact_info.email }}</h6>
+          <h6 class="has-text-weight-bold">{{ contact_info.email }}</h6>
           <div class="hover-appear">
             <div class="content">
               <h6 class="has-text-weight-bold is-unselectable">
@@ -31,7 +31,7 @@
               :class="{'extend': copiedPhone}"
               @click="toClipboard(contact_info.phone.pure)">
           <i class="fas fa-phone m-r-md"></i>
-          <h6>{{ contact_info.phone.display }}</h6>
+          <h6 class="has-text-weight-bold">{{ contact_info.phone.display }}</h6>
           <div class="hover-appear">
             <div class="content">
               <h6 class="has-text-weight-bold is-unselectable">
@@ -42,7 +42,7 @@
         </div>
         <div class="contact-details" @click="openNewTab(contact_info.github.link)">
           <i class="fab fa-github m-r-md"></i>
-          <h6>{{ contact_info.github.display }}</h6>
+          <h6 class="has-text-weight-bold">{{ contact_info.github.display }}</h6>
           <div class="hover-appear">
             <div class="content">
               <h6 class="has-text-weight-bold is-unselectable">VISIT</h6>
@@ -51,7 +51,7 @@
         </div>
         <div class="contact-details" @click="openNewTab(contact_info.linkedin.link)">
           <i class="fab fa-linkedin-in m-r-md m-b-xs"></i>
-          <h6>{{ contact_info.linkedin.display }}</h6>
+          <h6 class="has-text-weight-bold">{{ contact_info.linkedin.display }}</h6>
           <div class="hover-appear">
             <div class="content">
               <h6 class="has-text-weight-bold is-unselectable">VISIT</h6>
