@@ -15,9 +15,10 @@
     "register-service-worker": "^1.0.0",
     "v-click-outside": "^2.1.4",
     "vue": "^2.5.17",
-    "vue-pdf": "^3.3.1",
+    "vue-friendly-iframe": "^0.17.0",
     "vue-router": "^3.0.1",
     "vue-scrollactive": "^0.7.1",
+    "vue-scrollto": "^2.17.1",
     "vuex": "^3.1.2"
   },
   "devDependencies": {

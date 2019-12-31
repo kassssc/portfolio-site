@@ -1,7 +1,7 @@
 .nav-btn {
   position: relative;
   height: 50px;
-  color: #E0DDDA;
+  color: $text;
   text-transform: uppercase;
   font-weight: 800;
   transition: all 150ms ease-in-out;
@@ -19,16 +19,16 @@
     &::before {
       transition: all 150ms ease-in-out;
     }
-    color: #7DB9B9;
-    &:hover { color: #7DB9B9; }
+    color: $primary;
+    &:hover { color: $primary; }
     /*&::after {
-      border-bottom: 3px solid #7DB9B9;
+      border-bottom: 3px solid $primary;
       transition: all 200ms ease-in-out;
       transform: scaleX(1);
     }*/
   }
   &:hover {
-    color: #E0DDDA;
+    color: $text;
     @include slanted-bg-size(0px, calc(100% + 10px), 45px, 3px);
   }
   /*&::after {
@@ -89,7 +89,7 @@
     color: #E0DDDA;
     transition: all 200ms ease-in-out;
     &:hover {
-      color: #7DB9B9;
+      color: $primary;
     }
   }
 }

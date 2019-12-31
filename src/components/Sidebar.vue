@@ -13,12 +13,16 @@
     <nav-bar />
     <div id="contact" class="is-flex justify-start align-center p-l-xl">
       <div class="content is-flex flex-column m-t-md">
-        <h4 class="has-text-weight-black m-b-xs">GET IN TOUCH</h4>
+        <h4 class="has-text-weight-black m-b-xs">
+          GET IN TOUCH
+        </h4>
         <div  class="contact-details"
-              :class="{'extend': copiedEmail}"
+              :class="{ 'extend': copiedEmail }"
               @click="toClipboard(contact_info.email)">
           <i class="far fa-envelope sm m-r-md"></i>
-          <h6 class="has-text-weight-bold">{{ contact_info.email }}</h6>
+          <h6 class="has-text-weight-bold">
+            {{ contact_info.email }}
+          </h6>
           <div class="hover-appear">
             <div class="content">
               <h6 class="has-text-weight-bold is-unselectable">
@@ -28,9 +32,9 @@
           </div>
         </div>
         <div  class="contact-details"
-              :class="{'extend': copiedPhone}"
+              :class="{ 'extend': copiedPhone }"
               @click="toClipboard(contact_info.phone.pure)">
-          <i class="fas fa-phone m-r-md"></i>
+          <i class="fas fa-phone m-r-md" />
           <h6 class="has-text-weight-bold">{{ contact_info.phone.display }}</h6>
           <div class="hover-appear">
             <div class="content">
@@ -41,7 +45,7 @@
           </div>
         </div>
         <div class="contact-details" @click="openNewTab(contact_info.github.link)">
-          <i class="fab fa-github m-r-md"></i>
+          <i class="fab fa-github m-r-md" />
           <h6 class="has-text-weight-bold">{{ contact_info.github.display }}</h6>
           <div class="hover-appear">
             <div class="content">
@@ -50,7 +54,7 @@
           </div>
         </div>
         <div class="contact-details" @click="openNewTab(contact_info.linkedin.link)">
-          <i class="fab fa-linkedin-in m-r-md m-b-xs"></i>
+          <i class="fab fa-linkedin-in m-r-md m-b-xs" />
           <h6 class="has-text-weight-bold">{{ contact_info.linkedin.display }}</h6>
           <div class="hover-appear">
             <div class="content">
@@ -59,7 +63,7 @@
           </div>
         </div>
         <div class="contact-details" @click="openNewTab(contact_info.medium.link)">
-          <i class="fab fa-medium-m m-r-md m-b-xs"></i>
+          <i class="fab fa-medium-m m-r-md m-b-xs" />
           <h6>{{ contact_info.medium.display }}</h6>
           <div class="hover-appear">
             <div class="content">
@@ -81,7 +85,7 @@ export default {
   components: {
     'nav-bar': Navbar
   },
-  data() {
+  data () {
     return {
       copiedEmail: false,
       copiedPhone: false
@@ -93,16 +97,16 @@ export default {
     ])
   },
   methods: {
-    toClipboard(text) {
-      const delay = new Promise(resolve => {
-          if (text === this.contact_info.email) {
-            this.copiedEmail = true
-          } else if (text === this.contact_info.phone.pure) {
-            this.copiedPhone = true
-          }
-          setTimeout(resolve, 750)
+    toClipboard (text) {
+      const delay = new Promise( resolve => {
+        if (text === this.contact_info.email) {
+          this.copiedEmail = true
+        } else if (text === this.contact_info.phone.pure) {
+          this.copiedPhone = true
+        }
+        setTimeout(resolve, 750)
       })
-      delay.then(() => {
+      delay.then( () => {
         if (text === this.contact_info.email) {
           this.copiedEmail = false
         } else if (text === this.contact_info.phone.pure) {
@@ -119,7 +123,7 @@ export default {
       document.execCommand('copy')
       document.body.removeChild(el)
     },
-    openNewTab(url) {
+    openNewTab (url) {
       window.open(url, '_blank')
     }
   }

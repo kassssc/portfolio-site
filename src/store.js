@@ -8,9 +8,9 @@ export default new Vuex.Store({
     projects_shown: false,
     nav_buttons: [
       { name: 'about',      route: '/about',      id: '#about' },
-      { name: 'portfolio',  route: '/portfolio',   id: '#portfolio' },
+      { name: 'portfolio',  route: '/portfolio',  id: '#portfolio' },
       { name: 'experience', route: '/experience', id: '#experience' },
-      { name: 'resume',     route: '/resume',     id: '#resume'}
+      // { name: 'resume',     route: '/resume',     id: '#resume' }
     ],
     contact_info: {
       email: 'kass_c@hotmail.com',
@@ -33,7 +33,7 @@ export default new Vuex.Store({
     },
     project_list: [
       {
-        title: 'FA Thailand Backoffice Website',
+        title: 'Football Association of Thailand Backoffice Website',
         description: 'Data management interface for The Football Association of Thailand',
         card_bg: 'fa.jpg',
         images: [
@@ -41,7 +41,10 @@ export default new Vuex.Store({
         ],
         details: '',
         bullet_points: [
-
+          'Developed a social-media-like communication and project management platform to support quick, efficient, and convenient communication between the staff of the football association',
+          'Developed a database management system to interface with the database of football players, clubs, referees, and officials across Thailand',
+          'Created a match events logging system that could record and store all events in a football match',
+          'Directly communicated with the client to ensure that requirements are met and that the application is tailored to the client’s exact needs'
         ],
         technologies: [
           'angular', 'ts', 'html', 'sass', 'docker', 'node', 'rest'
@@ -58,7 +61,10 @@ export default new Vuex.Store({
         ],
         details: '',
         bullet_points: [
-
+          'Developed a prototype a gesture-controlled wifi lights system based on the Kinect depth-sensing camera and Lifx wifi light bulbs',
+          'Supports 6 gestures that could be mapped to any supported command',
+          'Supported light commands include on/off, all on/off, and brightness up/down',
+          'The C# program utilizes Microsoft\'s project gesture API to detect gestures from the Kinect, then calls the Python Lifx driver through a REST API to execute the commands'
         ],
         technologies: [
           'python', 'cs', 'rest', 'networks'
@@ -70,12 +76,15 @@ export default new Vuex.Store({
         title: 'Crypto Parking',
         description: 'Prototype parking lot management system that takes Bitcoin payments',
         card_bg: 'cryptoparking.png',
-        images: [
-
-        ],
+        youtube: 'https://www.youtube.com/embed/kN1Czs0m1SU',
         details: '',
         bullet_points: [
-
+          'Developed a prototype parking lot management system that takes Bitcoin payments',
+          'The system runs on the Raspberry Pi 3 connected to a mini touchscreen display',
+          'Customers can park in a spot where a blocker is raised to block the car in after a small grace period, after that, they must pay to lower the blocker and get their car out',
+          'Payments are in btc and the system provides a QR code for the customer to scan and send the btc',
+          'The system uses the blockchain API to detect payments and the Bitstamp API to convert between btc and usd',
+          'In any unexpected case, the user may tap the request assistance button that will automatically notify the system admin via email'
         ],
         technologies: [
           'python', 'embedded', 'rest'
@@ -92,14 +101,17 @@ export default new Vuex.Store({
         ],
         details: '',
         bullet_points: [
-
+          'Website that pulls and categorizes posts from various Facebook groups to display in one unified feed with searching and filtering features',
+          'The frontend is written in React and Redux and the backend is written in flask (python)',
+          'The backend uses our Facebook driver that utilizes the Facebook API to pull posts from different groups and store them in a searchable database to serve to our users',
+          'Provides a better way for users to browse posts from various Facebook groups, particularily useful when users are a part of multiple buy/sell and lost/found groups'
         ],
         technologies: [
           'react', 'redux', 'js', 'html', 'sass', 'python', 'rest'
         ],
         type: '',
         col_css: 'is-5',
-        link: "https://bookface-cse210.web.app/"
+        link: 'https://bookface-cse210.web.app/'
       },
       {
         title: 'Wisconsin Racing',
@@ -109,8 +121,18 @@ export default new Vuex.Store({
 
         ],
         details: '',
+        heading: 'Formula SAE Electric',
         bullet_points: [
-
+          'Designed and develop the steering wheel LCD screen and controls for Wisconsin Racing\'s first ever Formula SAE Electric vehicle',
+          'The LCD screen displays important information about the vehicle, such as battery level, speed, traction control, and motor temperatures using information from sensors',
+          'Managed and programmed the CAN communication messages between different sensors and parts of the vehicle',
+          'Worked closely with the driver to ensure that the display and controls are fine-tuned to their preferences'
+        ],
+        heading_2: 'Formula SAE Combustion',
+        bullet_points_2: [
+          'Designed and develop the steering wheel LCD screen and controls for the vehicle',
+          'Created a wiring schematics diagram outlining every single electrical connection between parts of the vehicle',
+          'Tested and debugged a safety feature that kills the throttle in case of an error'
         ],
         technologies: [
           'c', 'embedded', 'networks'
@@ -119,15 +141,25 @@ export default new Vuex.Store({
         col_css: 'is-4'
       },
       {
-        title: 'Project RuFaS @USDA-ARS',
+        title: 'Project RuFaS & IFSM @USDA-ARS',
         description: 'Dairy farm simulation program',
         card_bg: 'usda.png',
         images: [
 
         ],
         details: '',
+        heading: 'IFSM',
         bullet_points: [
-
+          'Cooperated with dairy scientists to modify IFSM, an existing dairy farm simulation program, to suit their research needs',
+          'Implemented a new feature in IFSM that enables dairy scientists to enter a customized cow feeding ration for the simulation',
+          'Implemented a new output selection module that allows users to extract only the desired results of the simulation and export them in desired formats such as csv'
+        ],
+        heading_2: 'RuFaS',
+        bullet_points_2: [
+          'Realizing the various architectural limitations of IFSM that made augmenting it extremely difficult, we started developing a brand new simulation program, RuFaS',
+          'RuFaS is a modern dairy farm simulation program based on IFSM, written in Python and is a collaboration effort between researchers across multiple universities',
+          'RuFaS is designed to be clean and modular, allowing researchers with less programming experience to be able to integrate their own simulation routines into the program with ease',
+          'RuFaS has a clearly-defined and customizable output module that allows users with minimal programming experience to easily select output values and export as a wide variety of formats'
         ],
         technologies: [
           'python'
@@ -147,7 +179,7 @@ export default new Vuex.Store({
 
         ],
         technologies: [
-          'vue', 'js'
+          'vue', 'js', 'sass'
         ],
         type: '',
         col_css: 'is-4'
@@ -157,11 +189,13 @@ export default new Vuex.Store({
         description: 'Restaurant management mobile application',
         card_bg: 'dinein.png',
         images: [
-
         ],
         details: '',
         bullet_points: [
-
+          'DineIn is a prototype mobile restaurant management application developed using Ionic and Angular',
+          'Users are able to keep track of table occupancy, employee shifts/check-ins, waitlists, reservations, and table layouts',
+          'Keeps track of important restaurant statistics',
+          'Supports drag-and-drop table layout customization and sizing'
         ],
         technologies: [
           'ionic', 'angular', 'ts'
@@ -178,7 +212,9 @@ export default new Vuex.Store({
         ],
         details: '',
         bullet_points: [
-
+          'EZ-Chef is a prototype cooking social media website where users could view, create, and share recipes',
+          'Provides step-by-step cooking instructions with timers for each dish on the website',
+          'Users are able to comment on recipes and save them'
         ],
         technologies: [
           'vue'
@@ -192,11 +228,12 @@ export default new Vuex.Store({
         description: 'Multi-player hangman game using morse code',
         card_bg: 'hangman.png',
         images: [
-
         ],
         details: '',
         bullet_points: [
-
+          'Developed a 2-player hangman game the BB15 circuit board written in C',
+          'Player 1 begins by entering a guessword in morse code using the buttons, player 2 then tries to guess the word, entering the guess character in morse code using the button',
+          'The game is played on 2 separate devices that communicate using the Xbee radio module'
         ],
         technologies: [
           'c'
@@ -209,11 +246,13 @@ export default new Vuex.Store({
         description: 'Distributed file storage system using RAFT',
         card_bg: 'surfstore.png',
         images: [
-
         ],
         details: '',
         bullet_points: [
-
+          'Developed a distributed file storage system for a class project',
+          'Uses XMLRPC for client-server and server-server communications',
+          'Uses the RAFT protocol for leader election and distributed log concensus',
+          'Files are stored as blocks and are accessed using the hash of the block as the key'
         ],
         technologies: [
           'python', 'networks'
@@ -233,7 +272,7 @@ export default new Vuex.Store({
 
         ],
         technologies: [
- 
+          'vue', 'js', 'sass'
         ],
         type: '',
         col_css: 'is-5',
@@ -248,15 +287,21 @@ export default new Vuex.Store({
         ],
         details: '',
         bullet_points: [
-
+          'Performed a user study evaluating the Effects of Tabbed and Non-Tabbed Designs for Command Line GUIs on Cognitive Load and Task Completion Time',
+          'The system synthesizes a GUI from command line commands, and includes useful parameter descriptions to assist the user',
+          'In the tabbed version, the commands are grouped using application tabs, whereas in the non-tabbed version, the commands are listed in the order which they should be executed',
+          'The participants are 14 graduate students',
+          'The experiment involves the participant performing simple command line tasks involving git and Docker',
+          'Measurements taken include task completion time, NASA-TLX index, observations, and post-experiment interviews',
+          'Results indicate that 78% of participants prefer the tabbed design as opposed to non-tabbed, but had no statistical significance',
+          '71% of the participants indicated that they fould the tool useful and would use it in their actual workflows'
         ],
         technologies: [
 
         ],
         type: '',
         col_css: 'is-5'
-      },
-
+      }
     ],
     tech_info: {
       html:     { img: 'html.png',      name: 'HTML5' },
@@ -357,8 +402,8 @@ export default new Vuex.Store({
           'sql',
           'node',
           'rest',
-          'embedded',
-          'networks'
+          // 'embedded',
+          // 'networks'
         ]
       }
     ]
@@ -379,16 +424,15 @@ export default new Vuex.Store({
     tech_list: state => {
       return state.tech_list
     }
-	},
+  },
   mutations: {
     TOGGLE_PROJECTS (state) {
       state.projects_shown = !state.projects_shown
     }
   },
   actions: {
-  	toggle_projects (context) {
-  		context.commit('TOGGLE_PROJECTS')
-  	}
+    toggle_projects (context) {
+      context.commit('TOGGLE_PROJECTS')
+    }
   }
-
 })

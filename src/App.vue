@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="bg"></div>
+    <div id="bg" />
     <section class="section p-none">
       <div class="is-hidden-tablet">
         <mobile-nav-bar />
@@ -14,7 +14,7 @@
           <about-section />
           <portfolio-section />
           <experience-section />
-          <resume-section />
+          <!-- <resume-section /> -->
         </div>
       </div>
     </section>
@@ -33,8 +33,6 @@
 
 <script>
 // @ is an alias to /src
-import { mapGetters, mapActions } from 'vuex'
-
 import Navbar from '@/components/Navbar.vue'
 import MobileNavbar from '@/components/MobileNavbar.vue'
 import Titlebar from '@/components/Titlebar.vue'
@@ -43,7 +41,6 @@ import PortfolioSection from '@/views/Portfolio.vue'
 import AboutSection from '@/views/About.vue'
 import ExperienceSection from '@/views/Experience.vue'
 import ResumeSection from '@/views/Resume.vue'
-
 
 export default {
   name: 'home',

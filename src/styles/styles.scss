@@ -1,4 +1,3 @@
-
 html {
   background-color: $bg !important;
   font-size: 18px;
@@ -9,12 +8,6 @@ html {
 
 body {
   background: $bg;
-  height: 100vh;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: $default;
-  font-weight: 500;
 }
 
 a.link {
@@ -31,45 +24,52 @@ a.link {
 }
 
 ::selection {
-  background: rgba(224,221,218,.99); /* WebKit/Blink Browsers */
+  background: rgba($color: $bone , $alpha: 0.99); /* WebKit/Blink Browsers */
   color: $bg;
   text-shadow: none;
 }
+
 ::-moz-selection {
-  background: rgba(224,221,218,.99); /* Gecko Browsers */
+  background: rgba($color: $bone , $alpha: 0.99); /* WebKit/Blink Browsers */
   color: $bg;
   text-shadow: none;
+}
+
+.gradient-text {
+  background: -webkit-linear-gradient(
+    -45deg, tint($primary, 40%), $sand, tint($primary, 40%), $sand
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  &::selection {
+    background: rgba($color: $bone , $alpha: 0.99);
+    -webkit-text-fill-color: $bg;
+  }
 }
 
 #app {
   //font-family: 'SF Pro Display', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $default;
 }
 
 #bg {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  //background-image: url('./assets/images/bg.png');
   background-image: url('./assets/images/bg-beach.jpg');
-  //background-image: url('./assets/images/bg-alt.jpg');
   -webkit-filter: grayscale(35%)
-                  //blur(4px)
-                  brightness(70%);
+                  brightness(65%);
   -moz-filter:    grayscale(35%)
-                  //blur(4px)
-                  brightness(70%);
+                  brightness(65%);
   -o-filter:      grayscale(35%)
-                  //blur(4px)
-                  brightness(70%);
+                  brightness(65%);
   -ms-filter:     grayscale(35%)
-                  //blur(4px)
-                  brightness(70%);
+                  brightness(65%);
   filter:         grayscale(35%)
-                  //blur(4px)
-                  brightness(70%);
+                  brightness(65%);
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -116,13 +116,10 @@ a.link {
 #main-content {
   width: 100%;
   margin-left: calc(295px + 5vw);
+  padding-bottom: 300px;
   @media screen and (max-width: 1085px) {
     margin-left: 0;
   }
-  &.no-scroll {
-    overflow: hidden;
-  }
-  padding-bottom: 300px;
 }
 
 //------------------------------------------------------------------------------
@@ -138,7 +135,6 @@ a.link {
   .content {
     overflow: visible;
     width: 250px;
-    color: $text;
     width: 100%;
   }
 }
@@ -237,7 +233,6 @@ a.link {
 
 .contact-bar {
   i {
-    color: $default;
     font-size: 2.5rem;
     margin: 0 5px;
   }
@@ -257,41 +252,45 @@ a.link {
   cursor: pointer;
   overflow: hidden;
   box-shadow: none;
-  background: transparent;
+  transition: 100ms ease-in-out;
+  -webkit-filter: grayscale(75%);
+  -moz-filter:    grayscale(75%);
+  -o-filter:      grayscale(75%);
+  -ms-filter:     grayscale(75%);
+  filter:         grayscale(75%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   .card-title {
     transform: translateY(40px);
     transition: 100ms ease-in-out;
-    z-index: 12;
-    font-size: 1.6rem;
+    font-size: 1.45rem;
     font-weight: 800;
-    color: $default;
     text-align: center;
     text-shadow: 2px 2px 10px #333333;
+    line-height: 1.25em;
   }
   .card-description {
-    //transform: translateY(25px);
     transition: 100ms ease-in-out;
     font-size: 1rem;
     font-weight: 700;
-    color: $default;
-    z-index: 12;
     text-shadow: 2px 2px 10px #333333;
     opacity: 0;
     visibility: hidden;
   }
   .detail-btn {
+    height: 45px;
+    width: 150px;
     position: relative;
     background: $translucent-accent;
-    z-index: 12;
     visibility: hidden;
     opacity: 0;
     transition: 100ms ease-in-out;
-    color: $default;
     margin-top: 0.75em;
     backdrop-filter: blur(7px);
   }
   .bg {
-    z-index: 11;
+    z-index: -1;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -299,40 +298,20 @@ a.link {
     background: rgba(0,0,0,0.4);
     transition: 100ms ease-in-out;
   }
-  .img {
-    border-radius: 2px;
-    overflow: auto;
-    z-index: 10;
-    position: absolute;
-    //top: -3%; bottom: -3%; right: -3%; left: -3%;
-    top: 0; bottom: 0; right: 0; left: 0;
-    transition: 100ms ease-in-out;
-    -webkit-filter: grayscale(75%);
-    -moz-filter: grayscale(75%);
-    -o-filter: grayscale(75%);
-    -ms-filter: grayscale(75%);
-    filter: grayscale(75%);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
   &:hover {
+    -webkit-filter: grayscale(20%);
+    -moz-filter:    grayscale(20%);
+    -o-filter:      grayscale(20%);
+    -ms-filter:     grayscale(20%);
+    filter:         grayscale(20%);  
     .detail-btn, .card-description {
       visibility: visible;
       opacity: 1;
     }
-    .img {
-      -webkit-filter: grayscale(25%);
-      -moz-filter: grayscale(25%);
-      -o-filter: grayscale(25%);
-      -ms-filter: grayscale(25%);
-      filter: grayscale(25%);  
-    }
     .bg {
-      background: rgba(100,100,100,.45);
+      background: rgba(75,75,75,.3);
     }
     .card-title {
-      color: $default;
       transform: none;
     }
   }
@@ -345,14 +324,7 @@ a.link {
   text-transform: uppercase;
   cursor: pointer;
   border-style: none;
-  &.md {
-    height: 45px;
-    width: 150px;
-  }
-  &.primary {
-    color: $bg;
-    background: rgba(224,221,218,0.8);
-  }
+  color: $text;
   &.project-nav-btn {
     font-size: 2rem;
     position: fixed;
@@ -363,7 +335,6 @@ a.link {
     transition: all 100ms ease-in-out;
     display: inherit !important; /* override v-show display: none */
     background: transparent;
-    color: $text;
     &[style*="display: none;"] {
       opacity: 0;
       pointer-events: none; /* disable user interaction */
@@ -394,18 +365,57 @@ a.link {
 }
 
 .project-modal {
-  @include slanted-bg-full(20px);
-  display: flex;
-  margin-top: 6em;
-  margin-bottom: 3em;
-  padding: 2.5em;
+  padding: 2.75em 2.5em 0 2.5em;
   min-height: 60vh;
+  display: flex;
+  @include slanted-bg-full(25px);
+  &:first-child {
+    margin-top: 6em;
+  }
+  &:not(:first-child) {
+    margin-top: 6em;
+  }
+  &:last-child {
+    margin-bottom: 6em;
+  }
   &::before {
-    background: rgba($color: #111111, $alpha: 0.5);
+    background: rgba($color: #111111, $alpha: 0.55);
     top: -2em;
   }
   .content {
     width: 100%;
+    .carousel {
+      height: 490px;
+      margin: 1em 0;
+      .carousel-item {
+        text-align: center;
+        img {
+          border-radius: 2px;
+          height: 450px;
+          width: auto;
+        }
+      }
+    }
+    .youtube-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      &.none {
+        height: 0;
+        display: none;
+        iframe {
+          display: none;
+        }
+      }
+      iframe {
+        height: 490px;
+      }
+    }
+    ul {
+      list-style-type: square;
+      line-height: 1.25em;
+      margin: 0 0 0 1.6em;
+    }
     .tech-icon {
       display: flex;
       flex-direction: column;
@@ -442,10 +452,12 @@ a.link {
   height: 10px;
   width: 30px;
   border-style: none;
+  border-radius: 2px;
+  transition: 100ms ease-in-out;
 }
 
 .modal-background {
-  background: rgba($color: #222222, $alpha: 0.5);
+  background: rgba($color: #444444, $alpha: 0.6);
 }
 
 .animation-content .modal-content {
@@ -455,17 +467,27 @@ a.link {
 .modal {
   justify-content: flex-start;
   .modal-content {
-    height: 100vh !important;
+    min-height: 100vh !important;
     width: 75vw !important;
     max-width: 1100px !important;
   }  
 }
 
 .carousel .carousel-arrow .icon {
+  height: 40px;
+  width: 40px;
   border-radius: 5px;
+  border-style: none;
+  background: transparent;
+  color: $text;
+  border-radius: 2px;
+  transition: 100ms ease-in-out;
   &:hover {
-    border: 0px solid transparent !important;
-    background: $bg;
+    border-style: none;
+    transform: scale(1.3);
+  }
+  &:active {
+    transform: scale(1.75);
   }
 }
 
@@ -476,30 +498,19 @@ a.link {
   height: 40px;
   padding-top: 0.5em;
   padding-left: 1em;
+  display: inline-block;
+  @include slanted-bg-size(-3px, calc(100% + 15px), 53px, 3px);
   .content {
     font-size: 1.3rem;
   }
-  &.frontend {
-    @include slanted-bg-size(-5px, 140px, 55px, 3px);  
-  }
-  &.languages {
-    @include slanted-bg-size(-5px, 160px, 55px, 3px);
-  }
-  &.tools {
-    @include slanted-bg-size(-5px, 165px, 55px, 3px);
-  }
-  &.technical {
-    @include slanted-bg-size(-5px, 145px, 55px, 3px);
-  }
-
 }
 
 .skill-icons {
   display: flex;
   max-width: calc(960px + 5vw);
   flex-wrap: wrap;
-  margin-top: 2.25em;
-  margin-left: 1.4em;
+  margin-top: 2.35em;
+  margin-left: 1.6em;
 }
 
 .skill-icon {
@@ -507,13 +518,13 @@ a.link {
   display: flex;
   justify-content: center;
   align-items: center;
-  $skill-icon-dim: calc(40px + 1.75vw);
+  $skill-icon-dim: calc(40px + 1.5vw);
   max-height: 80px;
   max-width: 80px;
   width: $skill-icon-dim;
   height: $skill-icon-dim;
-  cursor: pointer;
   margin-bottom: 1.75em;
+  cursor: pointer;
   &:not(:first-child) {
     margin-left: calc(#{$skill-icon-dim}/1.5);
   }
@@ -554,4 +565,25 @@ a.link {
 
 #resume-contents {
   width: 960px;
+}
+
+// Firefox style fixes for no backdrop-filter support
+@-moz-document url-prefix(){
+  .project-modal {
+    &::before {
+      background: rgba($color: #222222, $alpha: 1);
+    }
+  }
+  .skill-icon {
+    &:hover {
+      .img {
+        transition: 100ms ease-in-out;
+        filter: blur(12px);
+      }
+    }
+  }
+
+  .card .detail-btn {
+    background: $bg;
+  }
 }

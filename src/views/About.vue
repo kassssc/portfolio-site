@@ -13,8 +13,8 @@
                 Software Engineering, DevOps, & Design
               </h4>
               <p class="has-text-weight-semibold">
-                I'm a software engineer currently based in San Diego, originally from Bangkok, Thailand. 
-                I have worked on many projects, ranging from a race car steering wheel to a dairy farm simulation program.
+                I'm a software engineer currently based in San Diego, originally from Bangkok, Thailand.
+                I was part of many projects, ranging from a race car steering wheel to a dairy farm simulation program.
                 I specialize in frontend development and UX/UI design, but I am currently learning how to become a great DevOps engineer.
               </p>
               <p class="has-text-weight-semibold">
@@ -29,7 +29,7 @@
                 UW Madison - B.S. Computer Science & Electrical Engineering, May 2018
               </p>
               <p class="has-text-weight-semibold">
-                UC San Diego - M.S. Computer Science, June 2020
+                UC San Diego - M.S. Computer Science, March 2020
               </p>
               <div class="resume is-flex align-center m-t-md"
                    @click="show_resume()">
@@ -37,7 +37,7 @@
                   Resume
                 </h4>
                 <div class="icon-wrapper m-l-sm is-flex align-center justify-center">
-                  <i class="far fa-file-pdf"></i>
+                  <i class="far fa-file-pdf" />
                 </div>
                 <div class="hover-appear">
                   <div class="content">
@@ -63,7 +63,7 @@
               Resume
             </h4>
             <div class="icon-border m-r-md">
-              <i class="far fa-file-pdf"></i>
+              <i class="far fa-file-pdf" />
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default {
     return {}
   },
   methods: {
-    show_resume() {
+    show_resume () {
       window.open('/resume.pdf', '_blank')
     }
   }

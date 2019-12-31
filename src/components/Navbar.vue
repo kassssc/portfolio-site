@@ -51,17 +51,17 @@ export default {
   name: 'nav-bar',
   components: {
   },
-  data() {
+  data () {
     return {
       navShow: false,
       fullWidth: document.documentElement.clientWidth
     }
   },
   // bind event handlers to the `handleResize` method (defined below)
-  mounted() {
+  mounted () {
     window.addEventListener('resize', this.handleResize)
   },
-  beforeDestroy() {
+  beforeDestroy () {
     window.removeEventListener('resize', this.handleResize)
   },
   computed: {
@@ -74,16 +74,16 @@ export default {
     ...mapActions([
       'toggle_projects'
     ]),
-    hide_projects_if_necessary() {
+    hide_projects_if_necessary () {
       if (this.projects_shown) {
         this.toggle_projects()
       }
     },
-    toggleNav() {
+    toggleNav () {
       this.navShow = !this.navShow
     },
     // whenever the document is resized, re-set the 'fullHeight' variable
-    handleResize(event) {
+    handleResize (event) {
       this.fullWidth = document.documentElement.clientWidth
       //console.log(this.fullWidth)
       if (this.fullWidth >= 768) {
