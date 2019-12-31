@@ -21,6 +21,9 @@ Vue.mixin({
   methods: {
     genURL: (img) => {
       return 'url(' + require('./assets/images/' + img) + ')'
+    },
+    url: (img) => {
+      return 'url(' + img + ')'
     }
   }
 })

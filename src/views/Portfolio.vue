@@ -16,7 +16,7 @@
                   { 'disable-hover': is_scrolling }
                ]"
                @click="toggle_project_modal(idx)"
-               :style="{ 'background-image': genURL(project.card_bg) }">
+               :style="{ 'background-image': url(project.card_bg) }">
             <div class="bg" />
             <div class="card-title">
               {{ project.title }}

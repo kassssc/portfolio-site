@@ -35,7 +35,7 @@ export default new Vuex.Store({
       {
         title: 'Football Association of Thailand Backoffice Website',
         description: 'Data management interface for The Football Association of Thailand',
-        card_bg: 'fa.jpg',
+        card_bg: 'https://i.ibb.co/VMNz7Y7/fa.jpg',
         images: [
 
         ],
@@ -55,7 +55,7 @@ export default new Vuex.Store({
       {
         title: 'HomeAlive',
         description: 'Gesture-controlled Wi-Fi light bulbs',
-        card_bg: 'homealive.png',
+        card_bg: 'https://i.ibb.co/5r0Hr5C/homealive.png',
         images: [
           
         ],
@@ -75,7 +75,7 @@ export default new Vuex.Store({
       {
         title: 'Crypto Parking',
         description: 'Prototype parking lot management system that takes Bitcoin payments',
-        card_bg: 'cryptoparking.png',
+        card_bg: 'https://i.ibb.co/q5PqX5V/cryptoparking.png',
         youtube: 'https://www.youtube.com/embed/kN1Czs0m1SU',
         details: '',
         bullet_points: [
@@ -95,7 +95,7 @@ export default new Vuex.Store({
       {
         title: 'BookFace',
         description: 'Webapp that aggregates posts from Facebook groups into a single unified and organized feed',
-        card_bg: 'bookface.png',
+        card_bg: 'https://i.ibb.co/C23Bccj/bookface.png',
         images: [
 
         ],
@@ -116,7 +116,7 @@ export default new Vuex.Store({
       {
         title: 'Wisconsin Racing',
         description: 'Steering Wheel controls and LCD screen for Wisconsin Racing\'s Formula SAE car',
-        card_bg: 'wr.png',
+        card_bg: 'https://i.ibb.co/k0Fmnsf/wr.png',
         images: [
 
         ],
@@ -143,7 +143,7 @@ export default new Vuex.Store({
       {
         title: 'Project RuFaS & IFSM @USDA-ARS',
         description: 'Dairy farm simulation program',
-        card_bg: 'usda.png',
+        card_bg: 'https://i.ibb.co/4SwcDLv/usda.png',
         images: [
 
         ],
@@ -170,7 +170,7 @@ export default new Vuex.Store({
       {
         title: 'HOME24 Website',
         description: 'Simple information website for my family\'s hotel',
-        card_bg: 'home24.jpg',
+        card_bg: 'https://i.ibb.co/NYFFDtF/home24.jpg',
         images: [
 
         ],
@@ -187,7 +187,7 @@ export default new Vuex.Store({
       {
         title: 'DineIn',
         description: 'Restaurant management mobile application',
-        card_bg: 'dinein.png',
+        card_bg: 'https://i.ibb.co/kynk7zF/dinein.png',
         images: [
         ],
         details: '',
@@ -206,7 +206,7 @@ export default new Vuex.Store({
       {
         title: 'EZ-Chef',
         description: 'Cooking social media website with step-by-step tutorials',
-        card_bg: 'ezchef.png',
+        card_bg: 'https://i.ibb.co/jDWzgvJ/ezchef.png',
         images: [
 
         ],
@@ -226,7 +226,7 @@ export default new Vuex.Store({
       {
         title: 'Mini-Hangman Game',
         description: 'Multi-player hangman game using morse code',
-        card_bg: 'hangman.png',
+        card_bg: 'https://i.ibb.co/9NYsGHX/hangman.png',
         images: [
         ],
         details: '',
@@ -244,7 +244,7 @@ export default new Vuex.Store({
       {
         title: 'SurfStore',
         description: 'Distributed file storage system using RAFT',
-        card_bg: 'surfstore.png',
+        card_bg: 'https://i.ibb.co/DbwrWX0/surfstore.png',
         images: [
         ],
         details: '',
@@ -263,7 +263,7 @@ export default new Vuex.Store({
       {
         title: 'Chulalongkorn University Veterinary Diagnostic Lab Website',
         description: 'Simple information website',
-        card_bg: 'cuvet.png',
+        card_bg: 'https://i.ibb.co/9cMbVpv/cuvet.png',
         images: [
 
         ],
@@ -281,7 +281,7 @@ export default new Vuex.Store({
       {
         title: 'Command Line GUI Synthesis',
         description: 'Research comparing 2 different designs of synthesized command line GUI',
-        card_bg: 'gui.png',
+        card_bg: 'https://i.ibb.co/qWwGcr8/gui.png',
         images: [
 
         ],

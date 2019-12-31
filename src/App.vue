@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <div id="bg" />
+    <div id="bg"
+         :style="{ 'background-image': url('https://i.ibb.co/W6Vb3Vy/bg-beach.jpg')}"
+    />
     <section class="section p-none">
       <div class="is-hidden-tablet">
         <mobile-nav-bar />

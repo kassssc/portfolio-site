@@ -30,7 +30,8 @@
             {{ line }}
           </li>
         </ul>
-        <h5 v-if="project.heading_2" class="has-text-weight-black m-y-sm gradient-text">
+        <h5 v-if="project.heading_2"
+            class="has-text-weight-black m-y-sm gradient-text">
           {{ project.heading_2 }}
         </h5>
         <ul v-if="project.bullet_points_2">
