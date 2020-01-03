@@ -47,16 +47,6 @@
   &:hover::after { transform: scaleX(1); }*/
 }
 
-#nav-regular {
-  width: 135px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  transform-origin: right center;
-  transition: all 200ms linear;
-}
-
 #nav-collapse {
   width: 135px;
   height: 0px;

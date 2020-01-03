@@ -9,7 +9,7 @@
              :key="idx"
              :class="[
                 'column',
-                project.col_css,
+                project.col_css
              ]">
           <div :class="[
                   'card is-flex flex-column justify-center align-center text-center',
@@ -38,19 +38,6 @@
       <project-modal :curr="selected_project_idx" />
     </b-modal>
 
-    <!-- <button v-show="modal_active"
-            :class="[
-              'button custom project-nav-btn next',
-              {'show': modal_active}
-            ]"
-            @click="next_project">
-      <i class="fa fa-chevron-right" aria-hidden="true" />
-    </button>
-    <button v-show="modal_active"
-            class="button custom project-nav-btn prev"
-            @click="prev_project">
-      <i class="fa fa-chevron-left" aria-hidden="true" />
-    </button> -->
     <button v-show="modal_active"
             class="button custom project-nav-btn close"
             @click="modal_active = false">

@@ -37,7 +37,7 @@ export default new Vuex.Store({
         description: 'Data management interface for The Football Association of Thailand',
         card_bg: 'https://i.ibb.co/VMNz7Y7/fa.jpg',
         images: [
-
+          'https://i.ibb.co/VMNz7Y7/fa.jpg'
         ],
         details: '',
         bullet_points: [
@@ -57,7 +57,9 @@ export default new Vuex.Store({
         description: 'Gesture-controlled Wi-Fi light bulbs',
         card_bg: 'https://i.ibb.co/5r0Hr5C/homealive.png',
         images: [
-          
+          'https://s5.gifyu.com/images/ha1.gif',
+          'https://s5.gifyu.com/images/ha2.gif',
+          'https://i.ibb.co/f1cyxQ5/ha1.jpg'
         ],
         details: '',
         bullet_points: [
@@ -76,7 +78,12 @@ export default new Vuex.Store({
         title: 'Crypto Parking',
         description: 'Prototype parking lot management system that takes Bitcoin payments',
         card_bg: 'https://i.ibb.co/q5PqX5V/cryptoparking.png',
-        youtube: 'https://www.youtube.com/embed/kN1Czs0m1SU',
+        images: [
+          'https://s5.gifyu.com/images/cryptoparking.gif',
+          'https://i.ibb.co/PrxMTTY/crypto1.jpg',
+          'https://i.ibb.co/b1T86BQ/crypto4.jpg',
+          'https://i.ibb.co/4gBm6Pp/crypto3.jpg'
+        ],
         details: '',
         bullet_points: [
           'Developed a prototype parking lot management system that takes Bitcoin payments',
@@ -97,7 +104,7 @@ export default new Vuex.Store({
         description: 'Webapp that aggregates posts from Facebook groups into a single unified and organized feed',
         card_bg: 'https://i.ibb.co/C23Bccj/bookface.png',
         images: [
-
+          'https://i.ibb.co/C23Bccj/bookface.png'
         ],
         details: '',
         bullet_points: [
@@ -118,7 +125,12 @@ export default new Vuex.Store({
         description: 'Steering Wheel controls and LCD screen for Wisconsin Racing\'s Formula SAE car',
         card_bg: 'https://i.ibb.co/k0Fmnsf/wr.png',
         images: [
-
+          'https://i.ibb.co/LJBHrNY/wr1.jpg',
+          'https://i.ibb.co/WptTknZ/wr2.jpg',
+          'https://i.ibb.co/xH5bxM1/wr3.jpg',
+          'https://i.ibb.co/BgLTsh8/wr4.jpg',
+          'https://i.ibb.co/djyfsnb/wr5.jpg',
+          'https://i.ibb.co/LdHCsWM/wr6.jpg'
         ],
         details: '',
         heading: 'Formula SAE Electric',
@@ -145,7 +157,7 @@ export default new Vuex.Store({
         description: 'Dairy farm simulation program',
         card_bg: 'https://i.ibb.co/4SwcDLv/usda.png',
         images: [
-
+          'https://i.ibb.co/4SwcDLv/usda.png'
         ],
         details: '',
         heading: 'IFSM',
@@ -172,7 +184,7 @@ export default new Vuex.Store({
         description: 'Simple information website for my family\'s hotel',
         card_bg: 'https://i.ibb.co/NYFFDtF/home24.jpg',
         images: [
-
+          'https://i.ibb.co/NYFFDtF/home24.jpg'
         ],
         details: '',
         bullet_points: [
@@ -189,6 +201,7 @@ export default new Vuex.Store({
         description: 'Restaurant management mobile application',
         card_bg: 'https://i.ibb.co/kynk7zF/dinein.png',
         images: [
+          'https://i.ibb.co/kynk7zF/dinein.png'
         ],
         details: '',
         bullet_points: [
@@ -208,7 +221,7 @@ export default new Vuex.Store({
         description: 'Cooking social media website with step-by-step tutorials',
         card_bg: 'https://i.ibb.co/jDWzgvJ/ezchef.png',
         images: [
-
+          'https://i.ibb.co/jDWzgvJ/ezchef.png',
         ],
         details: '',
         bullet_points: [
@@ -228,6 +241,7 @@ export default new Vuex.Store({
         description: 'Multi-player hangman game using morse code',
         card_bg: 'https://i.ibb.co/9NYsGHX/hangman.png',
         images: [
+          'https://i.ibb.co/9NYsGHX/hangman.png'
         ],
         details: '',
         bullet_points: [
@@ -246,6 +260,7 @@ export default new Vuex.Store({
         description: 'Distributed file storage system using RAFT',
         card_bg: 'https://i.ibb.co/DbwrWX0/surfstore.png',
         images: [
+          'https://i.ibb.co/DbwrWX0/surfstore.png'
         ],
         details: '',
         bullet_points: [
@@ -265,7 +280,7 @@ export default new Vuex.Store({
         description: 'Simple information website',
         card_bg: 'https://i.ibb.co/9cMbVpv/cuvet.png',
         images: [
-
+          'https://i.ibb.co/9cMbVpv/cuvet.png'
         ],
         details: '',
         bullet_points: [
@@ -283,7 +298,7 @@ export default new Vuex.Store({
         description: 'Research comparing 2 different designs of synthesized command line GUI',
         card_bg: 'https://i.ibb.co/qWwGcr8/gui.png',
         images: [
-
+          'https://i.ibb.co/qWwGcr8/gui.png'
         ],
         details: '',
         bullet_points: [

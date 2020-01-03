@@ -49,23 +49,23 @@
                     :indicator-style="'is-lines'"
                     :icon-size="'is-medium'"
                     icon-pack="fas">
-          <b-carousel-item v-for="(img, i) in images" :key="i">
-            <img :src="img.url" />
+          <b-carousel-item v-for="(img, i) in project.images" :key="i">
+            <img :src="img" />
           </b-carousel-item>
         </b-carousel>
-        <div :v-if="project.youtube"
+        <!-- <div :v-if="project.youtube"
              :class="[
                 'youtube-container m-y-md',
                 { 'none': !project.youtube }
              ]">
-          <!-- <vue-friendly-iframe :v-if="project.youtube !== undefined" :src="project.youtube"></vue-friendly-iframe> -->
-          <!-- <iframe width="800" height="490"
+          <vue-friendly-iframe :v-if="project.youtube !== undefined" :src="project.youtube"></vue-friendly-iframe>
+          <iframe width="800" height="490"
                   :src="project.youtube"
                   frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen>
-          </iframe> -->
-        </div>
+          </iframe>
+        </div> -->
         <div v-if="project.technologies"
              class="is-flex full-width">
           <div v-for="(tech, idx) in project.technologies"

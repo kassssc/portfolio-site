@@ -86,8 +86,14 @@ a.link {
   z-index: 99;
 }
 
-#nav-mobile {
-  z-index: 2;
+#hamburger-nav {
+  z-index: 99;
+  position: fixed;
+  top: 25px; right: 25px;
+}
+
+#hamburger {
+
 }
 
 #name-container {
@@ -98,18 +104,12 @@ a.link {
 }
 
 #name-container-mobile {
-  padding-top: 0.75em;
-  height: 55px;
   width: 90px;
   text-align: center;
   @include slanted-bg-size(-5px, 90px, 55px, 3px);
 }
 
 #last-name-container-mobile {
-  z-index: 1;
-  padding-top: 1em;
-  padding-left: 0.75em;
-  height: 55px;
 }
 
 #main-content {
@@ -187,15 +187,6 @@ a.link {
 //------------------------------------------------------------------------------
 // About Section
 //------------------------------------------------------------------------------
-
-#about-block-1 {
-  display: flex;
-  align-items: stretch;
-  @media screen and (max-width: 500px) {
-    flex-wrap: wrap;
-  }
-}
-
 .resume {
   cursor: pointer;
   @include hover-appear-h6(100px, -4px, 40px);
@@ -585,4 +576,46 @@ a.link {
   .card .detail-btn {
     background: $bg;
   }
+}
+
+.nav-btn {
+  position: relative;
+  height: 50px;
+  color: $text;
+  text-transform: uppercase;
+  font-weight: 800;
+  transition: all 150ms ease-in-out;
+  &::before {
+    transition: all 150ms ease-in-out;
+    // Special case since scrollactive won't allow wrappers around a-tags
+    z-index: -1;
+  }
+  padding-top: 10px;
+  padding-left: 10px;
+  @include slanted-bg-size(0px, 0, 45px, 3px);
+  &.is-active {
+    @include slanted-bg-size(0px, calc(100% + 10px), 45px, 3px);
+    cursor: default;
+    &::before {
+      transition: all 150ms ease-in-out;
+    }
+    color: $primary;
+    &:hover {
+      color: $primary;
+    }
+  }
+  &:hover {
+    color: $text;
+    @include slanted-bg-size(0px, calc(100% + 10px), 45px, 3px);
+  }
+}
+
+#nav-regular {
+  width: 135px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transform-origin: right center;
+  transition: all 200ms linear;
 }

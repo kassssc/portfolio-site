@@ -15,7 +15,7 @@
               <p class="has-text-weight-semibold">
                 I'm a software engineer currently based in San Diego, originally from Bangkok, Thailand.
                 I was part of many projects, ranging from a race car steering wheel to a dairy farm simulation program.
-                I specialize in frontend development and UX/UI design, but I am currently learning how to become a great DevOps engineer.
+                I specialize in frontend development and UX/UI design, but I am currently learning how to become a DevOps engineer.
               </p>
               <p class="has-text-weight-semibold">
                 My interests are mostly in Human-Computer Interaction, software design, IoT devices (particularily gesture-controlled home automation), skiing, and architecture.
@@ -45,25 +45,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="is-hidden-tablet m-t-md">
-          <h4 class="has-text-weight-bold m-b-sm">
-            Education
-          </h4>
-          <p class="has-text-weight-medium m-b-none">
-            UW Madison - B.S. Computer Science & Electrical Engineering, May 2018
-          </p>
-          <p class="has-text-weight-medium">
-            UC San Diego - M.S. Computer Science, Expected June 2020
-          </p>
-          <div class="resume is-flex align-center m-t-md">
-            <h4 class="has-text-weight-bold m-b-none m-r-md">
-              Resume
-            </h4>
-            <div class="icon-border m-r-md">
-              <i class="far fa-file-pdf" />
             </div>
           </div>
         </div>
