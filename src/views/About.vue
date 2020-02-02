@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     show_resume () {
-      window.open('/resume.pdf', '_blank')
+      window.open('/resume-ks.pdf', '_blank')
     }
   }
 }

@@ -44,6 +44,18 @@
       <i class="fa fa-times" aria-hidden="true" />
     </button>
 
+    <button v-show="modal_active"
+            class="button custom project-nav-btn next"
+            @click="next_project()">
+      <i class="fa fa-chevron-right" aria-hidden="true" />
+    </button>
+
+    <button v-show="modal_active"
+            class="button custom project-nav-btn prev"
+            @click="prev_project">
+      <i class="fa fa-chevron-left" aria-hidden="true" />
+    </button>
+
   </div>
 </template>
 
