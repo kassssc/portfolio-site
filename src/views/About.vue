@@ -13,7 +13,7 @@
                 Software Engineering, DevOps, & Design
               </h4>
               <p class="has-text-weight-semibold">
-                I'm a software engineer currently based in San Diego, originally from Bangkok, Thailand.
+                I'm a software engineer currently based in San Diego, California. I am originally from Bangkok, Thailand.
                 I was part of many projects, ranging from a race car steering wheel to a dairy farm simulation program.
                 I specialize in frontend development and UX/UI design, but I am currently learning how to become a DevOps engineer.
               </p>
