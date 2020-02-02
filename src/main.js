@@ -8,14 +8,12 @@ import vClickOutside from 'v-click-outside'
 import VueScrollTo from 'vue-scrollto'
 import Buefy from 'buefy'
 import VueScrollactive from 'vue-scrollactive'
-import VueFriendlyIframe from 'vue-friendly-iframe'
 
 Vue.config.productionTip = false
 Vue.use(Buefy)
 Vue.use(VueScrollactive)
 Vue.use(vClickOutside)
 Vue.use(VueScrollTo)
-Vue.use(VueFriendlyIframe)
 
 Vue.mixin({
   methods: {
