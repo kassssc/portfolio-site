@@ -1,47 +1,45 @@
 <template>
   <div>
-    <div class="project-modal"
-         v-for="(project, idx) in project_list"
-         :key="idx"
-         :id="idx">
+    <div class="project-modal">
       <div class="content">
         <h1 class="has-text-weight-black m-b-sm gradient-text">
-          {{ project.title }}
+          {{ project_list[curr].title }}
         </h1>
         <h5 class="text-semibold m-b-sm">
-          {{ project.description }}
+          {{ project_list[curr].description }}
         </h5>
-        <div v-if="project.link"
+        <div v-if="project_list[curr].link"
              class="m-b-sm">
           <i class="fa fa-link m-r-xs is-size-6" aria-hidden="true" />
-          <a :href="project.link"
+          <a :href="project_list[curr].link"
              target="_blank"
              class="link">
-            {{ project.link }}
+            {{ project_list[curr].link }}
           </a>
         </div>
-        <h5 v-if="project.heading" class="has-text-weight-black m-y-sm gradient-text">
-          {{ project.heading }}
+        <h5 v-if="project_list[curr].heading" class="has-text-weight-black m-y-sm gradient-text">
+          {{ project_list[curr].heading }}
         </h5>
-        <ul v-if="project.bullet_points">
-          <li v-for="(line, idx) in project.bullet_points"
+        <ul v-if="project_list[curr].bullet_points">
+          <li v-for="(line, idx) in project_list[curr].bullet_points"
               :key="idx"
               class="has-text-weight-semibold">
             {{ line }}
           </li>
         </ul>
-        <h5 v-if="project.heading_2"
+        <h5 v-if="project_list[curr].heading_2"
             class="has-text-weight-black m-y-sm gradient-text">
-          {{ project.heading_2 }}
+          {{ project_list[curr].heading_2 }}
         </h5>
-        <ul v-if="project.bullet_points_2">
-          <li v-for="(line, idx) in project.bullet_points_2"
+        <ul v-if="project_list[curr].bullet_points_2">
+          <li v-for="(line, idx) in project_list[curr].bullet_points_2"
               :key="idx"
               class="has-text-weight-semibold">
             {{ line }}
           </li>
         </ul>
-        <b-carousel v-if="project.images"
+        <b-carousel v-if="project_list[curr].images"
+                    :key="curr"
                     :indicator="true"
                     :indicator-inside="false"
                     :autoplay="false"
@@ -49,26 +47,26 @@
                     :indicator-style="'is-lines'"
                     :icon-size="'is-medium'"
                     icon-pack="fas">
-          <b-carousel-item v-for="(img, i) in project.images" :key="i">
+          <b-carousel-item v-for="(img, i) in project_list[curr].images" :key="i">
             <img :src="img" />
           </b-carousel-item>
         </b-carousel>
-        <!-- <div :v-if="project.youtube"
+        <!-- <div :v-if="project_list[curr].youtube"
              :class="[
                 'youtube-container m-y-md',
-                { 'none': !project.youtube }
+                { 'none': !project_list[curr].youtube }
              ]">
-          <vue-friendly-iframe :v-if="project.youtube !== undefined" :src="project.youtube"></vue-friendly-iframe>
+          <vue-friendly-iframe :v-if="project_list[curr].youtube !== undefined" :src="project_list[curr].youtube"></vue-friendly-iframe>
           <iframe width="800" height="490"
-                  :src="project.youtube"
+                  :src="project_list[curr].youtube"
                   frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen>
           </iframe>
         </div> -->
-        <div v-if="project.technologies"
+        <div v-if="project_list[curr].technologies"
              class="is-flex full-width">
-          <div v-for="(tech, idx) in project.technologies"
+          <div v-for="(tech, idx) in project_list[curr].technologies"
                :key="idx"
                class="tech-icon">
             <div class="img"
@@ -104,16 +102,10 @@ export default {
   },
   data () {
     return {
-      images: [
-        { url: 'https://static.vecteezy.com/system/resources/previews/000/210/520/original/vector-abstract-low-poly-background.jpg' },
-        { url: 'https://static.vecteezy.com/system/resources/previews/000/210/520/original/vector-abstract-low-poly-background.jpg' },
-        { url: 'https://static.vecteezy.com/system/resources/previews/000/210/520/original/vector-abstract-low-poly-background.jpg' },
-        { url: 'https://static.vecteezy.com/system/resources/previews/000/210/520/original/vector-abstract-low-poly-background.jpg' }
-      ]
     }
   },
   mounted () {
-    this.scroll_to(this.curr, false)
+    //this.scroll_to(this.curr, false)
   },
   methods: {
     scroll_to (id_num, smooth = true) {
@@ -131,7 +123,7 @@ export default {
   watch: {
     curr: {
       handler (val) {
-        this.scroll_to(val)
+        //this.scroll_to(val)
       },
       deep: true
     }

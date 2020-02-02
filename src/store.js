@@ -79,7 +79,7 @@ export default new Vuex.Store({
         description: 'Prototype parking lot management system that takes Bitcoin payments',
         card_bg: 'https://i.ibb.co/q5PqX5V/cryptoparking.png',
         images: [
-          'https://s5.gifyu.com/images/cryptoparking.gif',
+          'https://s5.gifyu.com/images/crypto-parking.gif',
           'https://i.ibb.co/PrxMTTY/crypto1.jpg',
           'https://i.ibb.co/b1T86BQ/crypto4.jpg',
           'https://i.ibb.co/4gBm6Pp/crypto3.jpg'
@@ -117,8 +117,8 @@ export default new Vuex.Store({
           'react', 'redux', 'js', 'html', 'sass', 'python', 'rest'
         ],
         type: '',
-        col_css: 'is-5',
-        link: 'https://bookface-cse210.web.app/'
+        col_css: 'is-5'
+        //link: 'https://bookface-cse210.web.app/'
       },
       {
         title: 'Wisconsin Racing',
