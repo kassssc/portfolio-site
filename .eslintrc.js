@@ -14,7 +14,8 @@ module.exports = {
     'spaced-comment': 'off',
     'space-in-parens': 'off',
     'key-spacing': 'off',
-    'camelcase': 'off'
+    'camelcase': 'off',
+    'unexpected-trailing-comma': 'off',
   },
   parserOptions: {
     parser: 'babel-eslint'
