@@ -1,19 +1,19 @@
 <template>
-  <div class="m-y-xl p-l-xl">
-    <scrollactive id="nav-regular"
-                  class="is-unselectable"
-                  :offset="25"
-                  :modifyUrl="false">
-      <a  id="page.id"
-          v-for="page in nav_buttons"
-          :key="page.name"
-          :href="page.id"
-          class="scrollactive-item nav-btn"
-          @click="hide_projects_if_necessary()">
-        {{page.name}}
-      </a>
-    </scrollactive>
-  </div>
+<div class="m-y-xl p-l-xl">
+  <scrollactive id="nav-regular"
+                class="is-unselectable"
+                :offset="25"
+                :modifyUrl="false">
+    <a  id="page.id"
+        v-for="page in nav_buttons"
+        :key="page.name"
+        :href="page.id"
+        class="scrollactive-item nav-btn"
+        @click="hide_projects_if_necessary()">
+      {{page.name}}
+    </a>
+  </scrollactive>
+</div>
 </template>
 
 <script>
@@ -64,7 +64,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style lang="scss" scoped>

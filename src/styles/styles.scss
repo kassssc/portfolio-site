@@ -79,7 +79,21 @@ a.link {
   position: fixed;
   width: 385px;
   padding-top: 4em;
+  @media screen and (max-width: 1350px) {
+    display: none;
+  }
 }
+
+#mobile-titlebar {
+  display: none;
+  h1 {
+    z-index: 1;
+  }
+  @media screen and (max-width: 1350px) {
+    display: flex;
+  }
+}
+
 
 #mobile-nav-bar {
   position: fixed;
@@ -90,10 +104,6 @@ a.link {
   z-index: 99;
   position: fixed;
   top: 25px; right: 25px;
-}
-
-#hamburger {
-
 }
 
 #name-container {
@@ -116,7 +126,7 @@ a.link {
   width: 100%;
   margin-left: calc(295px + 5vw);
   padding-bottom: 300px;
-  @media screen and (max-width: 1085px) {
+  @media screen and (max-width: 1350px) {
     margin-left: 0;
   }
 }
@@ -317,27 +327,38 @@ a.link {
   color: $text;
   &.project-nav-btn {
     font-size: 2rem;
-    position: fixed;
     width: 65px;
     height: 65px;
     padding: 0.25em;
     z-index: 101;
     transition: all 100ms ease-in-out;
-    display: inherit !important; /* override v-show display: none */
     background: transparent;
-    &[style*="display: none;"] {
-      opacity: 0;
-      pointer-events: none; /* disable user interaction */
-      user-select: none; /* disable user selection */
+    &.prev {
+      top: 45%;
+      left: 0px;
+      position: absolute;
+      @media screen and (max-width: 1024px)  {
+        display: none;
+      }
     }
     &.next {
-      top: 45%; right: 10%;
-    }
-    &.prev {
-      top: 45%; left: 10%;
+      top: 45%;
+      right: 0px;
+      position: absolute;
+      @media screen and (max-width: 1024px)  {
+        display: none;
+      }
     }
     &.close {
-      top: 50px; right: 50px;
+      position: fixed;
+      display: inherit !important; // override v-show display: none 
+      &[style*="display: none;"] {
+        opacity: 0;
+        pointer-events: none; //disable user interaction 
+        user-select: none; //disable user selection
+      }
+      top: 2vw;
+      right: 2vw;
       &:hover {
         transform: scale(1.5);
       }
@@ -358,8 +379,17 @@ a.link {
   padding: 2.75em 2.5em 2em 2.5em;
   min-height: 60vh;
   display: flex;
+  margin-top: 6em;
+  margin-right: 80px;
+  margin-left: 80px;
+  width: 100%;
+  @media screen and (max-width: 1024px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  min-width: 0;
   @include slanted-bg-full(25px);
-  &:first-child {
+  /*&:first-child {
     margin-top: 6em;
   }
   &:not(:first-child) {
@@ -367,7 +397,7 @@ a.link {
   }
   &:last-child {
     margin-bottom: 6em;
-  }
+  }*/
   &::before {
     background: rgba($color: #111111, $alpha: 0.55);
     top: -2em;
@@ -375,7 +405,6 @@ a.link {
   .content {
     width: 100%;
     .carousel {
-      height: 490px;
       margin: 1em 0;
       .carousel-item {
         text-align: center;
@@ -383,6 +412,10 @@ a.link {
           border-radius: 2px;
           height: 450px;
           width: auto;
+          @media screen and (max-width: 1024px) {
+            height: auto;
+            width: 100%;
+          }
         }
       }
     }
@@ -438,6 +471,7 @@ a.link {
   }
 }
 
+
 .carousel .carousel-indicator .indicator-item .indicator-style.is-lines {
   height: 10px;
   width: 30px;
@@ -458,9 +492,18 @@ a.link {
   justify-content: flex-start;
   .modal-content {
     min-height: 100vh !important;
-    width: 75vw !important;
-    max-width: 1100px !important;
-  }  
+    min-width: 1024px;
+    width: 80vw !important;
+    max-width: 1300px !important;
+    margin: 0;
+  }
+  @media screen and (max-width: 1024px)  {
+    .modal-content {
+      min-width: 0px !important;
+      width: 100% !important;
+      max-width: 100% !important;      
+    }  
+  }
 }
 
 .carousel .carousel-arrow .icon {
