@@ -65,7 +65,7 @@
         </iframe>
       </div> -->
       <div v-if="project_list[curr].technologies"
-            class="is-flex full-width">
+            class="is-flex full-width flex-wrap">
         <div v-for="(tech, idx) in project_list[curr].technologies"
               :key="idx"
               class="tech-icon">
@@ -81,7 +81,7 @@
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
 
   <button class="button custom project-nav-btn prev"
@@ -92,7 +92,7 @@
           @click="$emit('next')">
     <i class="fa fa-chevron-right" aria-hidden="true" />
   </button>
-  
+
 </div>
 </template>
 
@@ -141,5 +141,163 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.project-modal {
+  padding: 3em 2.5em 2em 2.5em;
+  min-height: 60vh;
+  display: flex;
+  margin-top: 6em;
+  margin-right: 80px;
+  margin-left: 80px;
+  width: 100%;
+  @media screen and (max-width: 1024px) {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 5vw 1.5em 1.5em 1.5em;
+    .content h1 {
+      font-size: 1.6em;
+    } 
+  }
+  min-width: 0;
+  @include slanted-bg-full(25px);
+  /*&:first-child {
+    margin-top: 6em;
+  }
+  &:not(:first-child) {
+    margin-top: 6em;
+  }
+  &:last-child {
+    margin-bottom: 6em;
+  }*/
+  &::before {
+    background: rgba($color: #111111, $alpha: 0.55);
+    top: -2em;
+  }
+  .content {
+    width: 100%;
+    .carousel {
+      margin: 1em 0;
+      .carousel-item {
+        text-align: center;
+        img {
+          border-radius: 2px;
+          height: 450px;
+          width: auto;
+          @media screen and (max-width: 1024px) {
+            height: auto;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .youtube-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      &.none {
+        height: 0;
+        display: none;
+        iframe {
+          display: none;
+        }
+      }
+      iframe {
+        height: 490px;
+      }
+    }
+    ul {
+      list-style-type: square;
+      line-height: 1.25em;
+      margin: 0 0 0 1.6em;
+    }
+    .tech-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      &:hover {
+        .hidden-tooltip {
+          transform: scaleX(1);
+        }
+      }
+      margin-right: 1em;
+      margin-left: 1em;
+      width: 45px;
+      max-height: 100px;
+      .img {
+        min-width: 45px;
+        min-height: 45px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      .hidden-tooltip {
+        margin-top: 0.3em;
+        text-align: center;
+        width: 125px;
+        transition: 100ms ease-in-out;
+        transform: scale(0);
+        @media screen and (max-width: 1024px) {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 1024px) {
+        width: 35px;
+        height: 35px;
+        margin-left: 0;
+        margin-right: 1em;
+        .img {
+          min-width: 35px;
+          min-height: 35px;
+        }
+      }
+    }
+  }
+}
+
+.button.custom.project-nav-btn {
+  font-size: 2rem;
+  width: 65px;
+  height: 65px;
+  padding: 0.25em;
+  z-index: 101;
+  transition: all 100ms ease-in-out;
+  background: transparent;
+  &.prev {
+    top: 45%;
+    left: 0px;
+    position: absolute;
+    @media screen and (max-width: 1024px)  {
+      display: none;
+    }
+  }
+  &.next {
+    top: 45%;
+    right: 0px;
+    position: absolute;
+    @media screen and (max-width: 1024px)  {
+      display: none;
+    }
+  }
+  &.close {
+    position: fixed;
+    display: inherit !important; // override v-show display: none
+    &[style*="display: none;"] {
+      opacity: 0;
+      pointer-events: none; //disable user interaction
+      user-select: none; //disable user selection
+    }
+    top: 2vw;
+    right: 2vw;
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+  &:hover {
+    transform: scale(1.4);
+  }
+  &:active {
+    transform: scale(2);
+  }
+}
 </style>

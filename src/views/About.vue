@@ -1,7 +1,17 @@
 <template>
 <div id="about" class="main-section">
   <div class="content">
-    <h1 class="has-text-weight-black">ABOUT</h1>
+
+    <div id="mobile-titlebar">
+      <div id="name-container" class="m-r-md">
+        <div class="content">
+          <h1 class="has-text-weight-bold m-none">Kass</h1>
+        </div>
+      </div>
+      <div class="last-name has-text-weight-bold">Chupongstimun</div>
+    </div>
+
+    <h1 class="has-text-weight-black m-t-none">ABOUT</h1>
     <div class="is-flex flex-column">
       <div id="about-block-1">
         <!--<div id="self-portrait"
@@ -21,7 +31,7 @@
               My interests are mostly in Human-Computer Interaction, software design, IoT devices (particularily gesture-controlled home automation), skiing, and architecture.
             </p>
           </div>
-          <div class="is-hidden-mobile m-t-md">
+          <div class="m-t-md">
             <h4 class="has-text-weight-bold m-b-sm">
               Education
             </h4>

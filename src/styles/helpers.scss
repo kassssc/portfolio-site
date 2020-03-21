@@ -108,7 +108,11 @@
   align-items: flex-end !important;
 }
 .align-left {
-  align-self: flex-start;
+  align-self: flex-start !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
 }
 
 .text-center {

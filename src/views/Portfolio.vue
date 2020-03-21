@@ -1,7 +1,7 @@
 <template>
 <div id="portfolio" class="main-section">
   <div class="content">
-    <h1 class="has-text-weight-black m-y-lg">
+    <h1 class="has-text-weight-black p-t-lg m-b-lg">
       PORTFOLIO
     </h1>
     <div class="columns is-multiline project-row">

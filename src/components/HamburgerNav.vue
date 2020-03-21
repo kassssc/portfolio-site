@@ -3,7 +3,7 @@
        class="is-flex flex-column align-end">
     <div class="is-flex"
          @click="toggleNav()">
-      <i class="fa fa-bars is-size-4"></i>
+      <i class="fa fa-bars"></i>
     </div>
     <scrollactive id="nav-collapse" class="unselectable"
                   :class="{'visible': nav_show}"

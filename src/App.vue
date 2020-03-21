@@ -4,13 +4,13 @@
         :style="{ 'background-image': url('https://i.ibb.co/W6Vb3Vy/bg-beach.jpg') }"
   />
   <section class="section p-none">
-    <!-- <hamburger-nav class="is-hidden-tablet" /> -->    
+    <!-- <hamburger-nav />  -->   
     <div class="is-flex justify-between">
       <div id="sidebar">
         <side-bar />
       </div>
       <div id="main-content"
-            class="is-marginless-mobile is-flex flex-column">
+           class="is-marginless-mobile is-flex flex-column">
         <about-section />
         <portfolio-section />
         <experience-section />
@@ -21,11 +21,9 @@
 </template>
 
 <style lang="scss">
-@import './styles/colors.scss';
 @import "~bulma/sass/utilities/_all";
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
-@import './styles/helpers.scss';
 @import './styles/styles.scss';
 </style>
 
