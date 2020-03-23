@@ -156,7 +156,7 @@ export default {
     padding: 5vw 1.5em 1.5em 1.5em;
     .content h1 {
       font-size: 1.6em;
-    } 
+    }
   }
   min-width: 0;
   @include slanted-bg-full(25px);

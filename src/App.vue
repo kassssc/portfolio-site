@@ -1,10 +1,8 @@
 <template>
-<div id="app" v-if="is_loaded">
-  <div id="bg"
-        :style="{ 'background-image': url('https://i.ibb.co/W6Vb3Vy/bg-beach.jpg') }"
-  />
+<div id="app">
+  <div id="bg" />
   <section class="section p-none">
-    <!-- <hamburger-nav />  -->   
+    <!-- <hamburger-nav />  -->
     <div class="is-flex justify-between">
       <div id="sidebar">
         <side-bar />
@@ -14,6 +12,12 @@
         <about-section />
         <portfolio-section />
         <experience-section />
+        <div id="contact-section" class="main-section">
+          <div class="content">
+            <h1 class="has-text-weight-black p-t-lg">GET IN TOUCH</h1>
+            <contact class="m-l-lg"/>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -30,9 +34,8 @@
 <script>
 import Navbar from '@/components/Navbar.vue'
 import HamburgerNav from '@/components/HamburgerNav.vue'
-import MobileNavbar from '@/components/MobileNavbar.vue'
-import Titlebar from '@/components/Titlebar.vue'
 import Sidebar from '@/components/Sidebar.vue'
+import Contact from '@/components/Contact.vue'
 import PortfolioSection from '@/views/Portfolio.vue'
 import AboutSection from '@/views/About.vue'
 import ExperienceSection from '@/views/Experience.vue'
@@ -42,22 +45,13 @@ export default {
   components: {
     'nav-bar': Navbar,
     'hamburger-nav': HamburgerNav,
-    'mobile-nav-bar': MobileNavbar,
-    'title-bar': Titlebar,
     'side-bar': Sidebar,
     'portfolio-section': PortfolioSection,
     'experience-section': ExperienceSection,
-    'about-section': AboutSection
+    'about-section': AboutSection,
+    'contact': Contact
   },
-  data () {
-    return {
-      is_loaded: false
-    }
-  },
-  mounted() {
-    this.is_loaded = true
-  }
-  /*methods: {
+  /*method  s: {
     handleScroll: function () {
       let projects = document.getElementById('projects')
       if (this.timer) {

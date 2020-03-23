@@ -16,6 +16,7 @@ module.exports = {
     'key-spacing': 'off',
     'camelcase': 'off',
     'unexpected-trailing-comma': 'off',
+    'comma-dangle': 'off'
   },
   parserOptions: {
     parser: 'babel-eslint'

@@ -13,7 +13,6 @@
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "register-service-worker": "^1.0.0",
-    "v-click-outside": "^2.1.4",
     "vue": "^2.5.17",
     "vue-friendly-iframe": "^0.17.0",
     "vue-router": "^3.0.1",

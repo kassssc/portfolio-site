@@ -76,6 +76,7 @@ a.link {
   width: 100vw;
   position: fixed;
   top: 0; bottom: 0; left: 0; right: 0;
+  background-image: url('https://i.ibb.co/W6Vb3Vy/bg-beach.jpg');
 }
 
 #sidebar {
@@ -125,7 +126,7 @@ a.link {
 #main-content {
   width: 100%;
   margin-left: calc(295px + 5vw);
-  padding-bottom: 300px;
+  padding-bottom: 100px;
   @media screen and (max-width: 1350px) {
     margin-left: 0;
   }
@@ -170,15 +171,19 @@ a.link {
 }
 
 #experience {
-  padding-top: calc(70px + 1vw);
+  padding-top: calc(4vw);
   padding-bottom: calc(4vw);
 }
 
-#resume {
-  transition: 100ms ease-in-out;
+#contact-section {
+  padding-top: calc(1.5vw);
+  display: none;
   @include slanted-bg-full(15px);
   &::before {
     top: -3vw;
+  }
+  @media screen and (max-width: 1350px) {
+    display: block;
   }
 }
 
@@ -388,9 +393,6 @@ a.link {
   padding-left: 1em;
   display: inline-block;
   @include slanted-bg-size(-3px, calc(100% + 15px), 53px, 3px);
-  .content {
-    font-size: 1.3rem;
-  }
 }
 
 .skill-icons {
@@ -406,9 +408,9 @@ a.link {
   display: flex;
   justify-content: center;
   align-items: center;
-  $skill-icon-dim: calc(40px + 1.5vw);
-  max-height: 80px;
-  max-width: 80px;
+  $skill-icon-dim: calc(35px + 1.5vw);
+  max-height: 70px;
+  max-width: 70px;
   width: $skill-icon-dim;
   height: $skill-icon-dim;
   margin-bottom: 1.75em;
@@ -423,12 +425,12 @@ a.link {
     width: $skill-icon-dim;
     height: $skill-icon-dim;
     position: absolute !important;
-    max-height: 85px;
-    max-width: 85px;
+    max-height: 75px;
+    max-width: 75px;
     top: 0; left: 0; right: 0; bottom: 0;
   }
   .hidden-tooltip {
-    $hidden-tooltip-dim: calc(95px + 1.5vw);
+    $hidden-tooltip-dim: calc(75px + 1.5vw);
     min-width: $hidden-tooltip-dim;
     min-height: $hidden-tooltip-dim;
     max-height: 110px;

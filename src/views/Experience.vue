@@ -1,15 +1,15 @@
 <template>
   <div id="experience" class="main-section">
     <div class="content">
-      <h1 class="has-text-weight-black p-t-lg m-b-lg">EXPERIENCE</h1>
+      <h1 class="has-text-weight-black p-t-xl m-b-lg">EXPERIENCE</h1>
       <div v-for="(group, i) in tech_list"
            :key="i"
            class="m-b-md">
         <div class="skill-group-name-container">
           <div class="content">
-            <h6 class="has-text-weight-bold m-none">
+            <h4 class="has-text-weight-bold m-none">
               {{ group.group_name }}
-            </h6>
+            </h4>
           </div>
         </div>
         <div class="skill-icons">

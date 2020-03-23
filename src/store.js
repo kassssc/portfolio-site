@@ -361,7 +361,6 @@ export default new Vuex.Store({
     tech_list: [
       {
         group_name: 'Frontend',
-        css: 'frontend',
         list: [
           'html',
           'css',
@@ -378,7 +377,6 @@ export default new Vuex.Store({
       },
       {
         group_name: 'Languages',
-        css: 'languages',
         list: [
           'python',
           'c',
@@ -390,17 +388,24 @@ export default new Vuex.Store({
         ]
       },
       {
-        group_name: 'Other Tools',
-        css: 'tools',
+        group_name: 'DevOps',
         list: [
-          'terminal',
           'docker',
           'gcloud',
           'aws',
-          'vs',
           'git',
           'github',
-          'gitlab',
+          'gitlab'
+        ]
+      },
+      {
+        group_name: 'Others',
+        list: [
+          'terminal',
+          'vs',
+          'sql',
+          'node',
+          'rest',
           'xd',
           'ps',
           'ai',
@@ -408,15 +413,6 @@ export default new Vuex.Store({
           'slack',
           'trello',
           'zenhub'
-        ]
-      },
-      {
-        group_name: 'Technical',
-        css: 'technical',
-        list: [
-          'sql',
-          'node',
-          'rest',
           // 'embedded',
           // 'networks'
         ]
